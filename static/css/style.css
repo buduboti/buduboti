@@ -70,3 +70,8 @@ canvas{
   border-color: #eeeeee;
   border-radius: 25px;
 }
+
+#root{
+  height: 100%;
+  width: 100%;
+}

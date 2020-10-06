@@ -4,28 +4,30 @@
     <link rel="stylesheet" media="screen" href="css/style.css">
   </head>
   <body>
-    <div id="title">
-      <h2> Balás Botond Barna </h2>
-    </div>
+    <div id="root">
+      <div id="title">
+        <h2> Balás Botond Barna </h2>
+      </div>
 
-    <!-- particles.js container -->
-    <div id="particles-js"></div>
+      <!-- particles.js container -->
+      <div id="particles-js"></div>
 
-    <!-- scripts -->
-    <script src="../particles.js"></script>
-    <script src="js/app.js"></script>
+      <!-- scripts -->
+      <script src="../particles.js"></script>
+      <script src="js/app.js"></script>
 
-    <script>
-      var count_particles, update;
-      count_particles = document.querySelector('.js-count-particles');
-      update = function() {
-        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-        }
+      <script>
+        var count_particles, update;
+        count_particles = document.querySelector('.js-count-particles');
+        update = function() {
+          if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+          }
+          requestAnimationFrame(update);
+        };
         requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
-    </script>
+      </script>
 
+    </div>
   </body>
 </html>
 <!-- Background from https://github.com/VincentGarreau/particles.js/ -->
