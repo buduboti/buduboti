@@ -1,10 +1,16 @@
-//  Dependencies
-const fs = require("fs");
-const http = require("http");
-const https = require("https");
-const express = require("express");
+const fs = require("fs"),
+  hbs = require('hbs'),
+  path = require('path'),
+  http = require("http"),
+  https = require("https"),
+  express = require("express");
 
 const app = express();
+
+app.use(express.static('static'))
+
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
 // Certificate
 const privateKey = fs.readFileSync(
@@ -27,7 +33,7 @@ const credentials = {
 };
 
 app.use((req, res) => {
-  res.render("index.html");
+  res.status(200).render("index");
 });
 
 // Starting both http & https servers
