@@ -55,3 +55,10 @@ canvas{
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
+
+/* ---- others ---- */
+
+#title{
+  background: #000000;
+  opacity: 0.2;
+}
