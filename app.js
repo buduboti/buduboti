@@ -1,16 +1,18 @@
 const fs = require("fs"),
-  hbs = require('hbs'),
-  path = require('path'),
+  path = require("path"),
   http = require("http"),
   https = require("https"),
-  express = require("express");
+  express = require("express"),
+  projects = require("./projects.json");
 
 const app = express();
 
-app.use(express.static('static'))
+console.log(projects);
 
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
+app.use(express.static("static"));
+
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
 
 // Certificate
 const privateKey = fs.readFileSync(
@@ -33,12 +35,12 @@ const credentials = {
 };
 
 app.use((req, res) => {
-  res.status(200).render("index");
+  res.status(200).render("index", projects);
 });
 
 // Starting both http & https servers
 const httpServer = http.createServer((req, res) => {
-  res.writeHead(301, { Location: 'https://' + req.headers.host + req.url });
+  res.writeHead(301, { Location: "https://" + req.headers.host + req.url });
   res.end();
 });
 const httpsServer = https.createServer(credentials, app);

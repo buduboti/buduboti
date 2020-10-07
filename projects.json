@@ -1,0 +1,17 @@
+{
+	"projects": [
+		{
+			"name": "Mandelbrot fractal in x86 Assembly",
+			"gif-path": "/project-pic/asm.gif",
+			"description": "An optional university project.",
+			"used-technologies": [
+				"Complex mathematical calculations",
+				"SSE optimalization",
+				"Choose between single/double float precision",
+				"Input handling"
+			],
+			"link-to-code": "https://github.com/buduboti/mandelbrot-assembly",
+			"link-to-demo": null
+		}
+	]
+}

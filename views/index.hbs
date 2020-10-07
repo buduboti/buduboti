@@ -38,33 +38,43 @@
       </div>
 
       <div id="portfolio">
-        <div class="project">
-          <div class="project-show">
-            <img src="/project-pic/asm.gif">
+        {{#each projects}}
+          <div class="project">
+            <div class="project-show">
+              <img src="{{gif-path}}">
+            </div>
+            <div class="project-info">
+              <div class="project-title">
+                <h2>{{name}}</h2>
+              </div>
+              <div class="project-desc">
+                <p>{{description}}</p>
+                <p>I've used in this project:</p>
+                  <ul>
+                    {{#each used-technologies}}
+                      <li>{{this}}</li>
+                    {{/each}}
+                  </ul>
+              </div>
+              <div class="project-links">
+                {{#if link-to-code}}
+                  <a href="{{link-to-code}}">
+                    <div class="project-link-code">
+                      <p>Code</p>
+                    </div>
+                  </a>
+                {{/if}}
+                {{#if link-to-demo}}
+                  <a href="{{link-to-demo}}">
+                    <div class="project-link-demo">
+                      <p>Demo</p>
+                    </div>
+                  </a>
+                {{/if}}
+              </div>
+            </div>
           </div>
-          <div class="project-info">
-            <div class="project-title">
-              <h2>Mandelbrot fractal in x86 Assembly</h2>
-            </div>
-            <div class="project-desc">
-              <p>An optional university project.</p>
-              <p>I've used in this project:</p>
-              <ul>
-                <li>Complex mathematical calculations</li>
-                <li>SSE optimalization</li>
-                <li>Choose between single/double float precision</li>
-                <li>Input handling</li>
-              </ul>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/buduboti/mandelbrot-assembly">
-                <div class="project-link-code">
-                  <p>Code</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+        {{/each}}
       </div>
 
       <div id="nav">
