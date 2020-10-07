@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Balás Botond Barna</title>
     <link rel="stylesheet" media="screen" href="css/style.css">
   </head>
   <body>
     <div id="root">
-      <div id="title">
-        <h2> Balás Botond Barna </h2>
-      </div>
-
       <!-- particles.js container -->
       <div id="particles-js"></div>
 
+      <div id="title">
+        <div id="name-and-info">
+          <h1 id="name">Balás Botond Barna</h1>
+        </div>
+        <div id="skills">
+          <p>Favorite programming languages: C/C++, Python</p>
+          <p>Languages, which I want to learn (or practice more): Go, x86 Assembly</p>
+          <p>Prefered enviorement: zsh/neovim in a UNIX like OS</p>
+        </div>
+      </div>
+
+      <div id="portfolio">
+        <div class="project">
+          <div class="project-show">
+            <img src="/project-pic/asm.gif">
+          </div>
+          <div class="project-info">
+            <div class="project-title">
+              <h2>Mandelbrot fractal in x86 Assembly</h2>
+            </div>
+            <div class="project-desc">
+              <p>An optional university project.</p>
+              <p>I've used in this project:</p>
+              <ul>
+                <li>Complex mathematical calculations</li>
+                <li>SSE optimalization</li>
+                <li>Choose between single/double float precision</li>
+                <li>Input handling</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/buduboti/mandelbrot-assembly">
+                <div class="project-link-code">
+                  <p>Code</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="nav">
+        <a href="#top" id="nav-point-top">
+          <img src="/icons/point.png" />
+        </a>
+        <a href="#portfolio" id="nav-point-portfolio">
+          <img src="/icons/point.png" />
+        </a>
+        <a href="#top" id="nav-point-top">
+          <img src="/icons/point.png" />
+        </a>
+        <a href="#top" id="nav-point-top">
+          <img src="/icons/point.png" />
+        </a>
+        <a href="#top" id="nav-point-top">
+          <img src="/icons/point.png" />
+        </a>
+      </div>
+    
       <!-- scripts -->
       <script src="../particles.js"></script>
       <script src="js/app.js"></script>
