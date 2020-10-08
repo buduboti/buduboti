@@ -1,6 +1,7 @@
 {
 	"projects": [
 		{
+			"idx": 0,
 			"name": "Mandelbrot fractal in x86 Assembly",
 			"gif-path": "/project-pic/asm.gif",
 			"description": "An optional university project.",
@@ -12,6 +13,20 @@
 			],
 			"link-to-code": "https://github.com/buduboti/mandelbrot-assembly",
 			"link-to-demo": null
+		},
+		{
+			"idx": 1,
+			"name": "Restaurant booker website",
+			"gif-path": "/project-pic/asm.gif",
+			"description": "A Website where restaurant owners can register their websites and other users can book reservations.",
+			"used-technologies": [
+				"Authentication & Authorization",
+				"MongoDB",
+				"NodeJS | Express",
+				"AJAX"
+			],
+			"link-to-code": null,
+			"link-to-demo": "https://balasbotond.xyz:8081/"
 		}
 	]
 }

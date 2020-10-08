@@ -8,6 +8,10 @@
                                   supported by Chrome and Opera */
 }
 
+a:active, a:hover, a:visited, a:link, a:active > p , a:hover > p , a:visited > p , a:link > p {
+  text-decoration: none;
+}
+
 html, body { 
   margin: 0px;
   width: 100%;
@@ -105,6 +109,10 @@ canvas {
   padding: 5% 10%;
 }
 
+.link {
+  cursor: pointer;
+}
+
 .project {
   border-style: groove;
   border-color: rgba(238, 238, 238, 0.2);
@@ -112,9 +120,10 @@ canvas {
   align: center;
   position: relative;
   width: 100%;
-  height: 338px;
+  height: 200px;
   display: flex;
   flex-direction: row;
+  margin-bottom: 30px;
 }
 
 .project .project-show {
@@ -125,27 +134,59 @@ canvas {
 .project .project-show img {
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  height: 338px;
-  width: 540px;
+  height: 200px;
+  width: 320px;
 }
 
 .project .project-info {
   position: relative;
-  margin: 20px 40px;
-  display: flex;
-  flex-direction: column;
+  margin: 0px 40px 20px 40px;
 }
 
 .project .project-info .project-title h2 {
   color: rgba(238, 238, 238, 0.8);
 }
 
-.project .project-info .project-links {
+.project .project-links {
+  margin-left: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  right: 50px;
 }
 
-.project .project-info .project-links .project-link-code {
+.project .project-links .project-link-code {
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  background-color: #707070;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 35px 25px 15px 0px;
+}
+
+.project .project-links .project-link-code > p {
+  color: #bbbbbb;
+  font-size: 16px;
+}
+
+.project .project-links .project-link-demo {
+  height: 50px;
+  width: 100px;
+  border-radius: 25px;
+  background-color: #79492c;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 15px 25px 35px 0px;
+}
+
+.project .project-links .project-link-demo > p {
+  color: #bbbbbb;
+  font-size: 16px;
+}
+
+.project .project-links .non-working-link {
   height: 50px;
   width: 100px;
   border-radius: 25px;
@@ -155,28 +196,27 @@ canvas {
   justify-content: center;
 }
 
-.project .project-info .project-links .project-link-code > p {
+.project .project-links .non-working-link > p {
   color: #bbbbbb;
   font-size: 16px;
 }
 
-.project .project-info .project-links .project-link-demo {
+.blur-box {
+  box-shadow: 0 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#scroll-div {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  /* opacity: 0; */
+}
+
+#scroll-div > img {
   height: 50px;
-  width: 100px;
-  border-radius: 25px;
-  background-color: #79492c;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.project .project-info .project-links .project-link-demo > p {
-  color: #bbbbbb;
-  font-size: 16px;
-}
-
-a:active, a:hover, a:visited, a:link {
-  text-decoration: none;
 }
 
 #nav {
@@ -188,5 +228,29 @@ a:active, a:hover, a:visited, a:link {
   float: right;
 
   display: flex;
+  flex-direction: row-reverse;
+}
+
+#nav-points {
+  display: flex;
   flex-direction: column;
+}
+
+#nav-points > div {
+  height: 50px;
+}
+
+#nav-labels > div {
+  height: 50px;
+  width: 80px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-labels > div > p {
+  color: #bbbbbb;
+  font-size: 16px;
 }
