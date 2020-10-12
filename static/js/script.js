@@ -1,3 +1,4 @@
+
 let labels = document.getElementById("nav-labels").getElementsByTagName("div");
 
 document.getElementById("nav-point-top").addEventListener("mouseenter", () => {
@@ -9,7 +10,7 @@ document.getElementById("nav-point-top").addEventListener("mouseleave", () => {
 });
 
 document.getElementById("nav-point-top").addEventListener("click", () => {
-  window.location.hash = "root";
+  window.location.hash = "title";
 });
 
 document
@@ -74,26 +75,6 @@ document.getElementById("nav-point-contact").addEventListener("click", () => {
 
 document.getElementById("scroll-div").addEventListener("click", () => {
   window.location.hash = "portfolio";
-});
-
-function fadeOutEffect(fadeTarget) {
-  var fadeEffectOut = setInterval(function () {
-    if (!fadeTarget.style.opacity) {
-      fadeTarget.style.opacity = 1;
-    }
-    if (fadeTarget.style.opacity > 0) {
-      fadeTarget.style.opacity -= 0.1;
-    } else {
-      clearInterval(fadeEffectOut);
-    }
-  }, 200);
-}
-
-window.addEventListener("scroll", (e) => {
-  let scrollDown = document.getElementById("scroll-div");
-  if (window.scrollY !== 0) {
-    fadeOutEffect(scrollDown);
-  }
 });
 
 fetch("/projects")

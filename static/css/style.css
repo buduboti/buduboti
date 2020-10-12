@@ -61,19 +61,27 @@ canvas {
 /* ---- others ---- */
 
 #root {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#root > div {
+  position: relative;
+  min-height: 100%;
 }
 
 #title {
-  margin-top: 150px;
-  margin-left: 15%;
-  margin-right: 15%;
-  width: 70%;
+  padding-top: 150px;
+  padding-left: 15%;
+  padding-right: 15%;
   position: absolute;
+  /* height: 100%; */
   display: flex;
   flex-direction: row;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 #name-and-info {
@@ -83,6 +91,7 @@ canvas {
   border-radius: 25px;
   padding: 30px 50px;
   width: 40%;
+  height: max-content; /* or min-content */
 }
 
 #name-and-info > p {
@@ -92,6 +101,7 @@ canvas {
 #skills {
   padding: 30px 50px;
   width: 60%;
+  height: max-content; /* or min-content */
 }
 
 #name {
@@ -102,11 +112,18 @@ canvas {
 
 #portfolio {
   background: rgba(0,0,0,0.2);
-  position: absolute;
-  top: 100%;
-  height: 100%;
-  width: 80%;
+  /* min-height: 100%; */
+  /* height: 100%; */
+  width: 100%;
   padding: 5% 10%;
+  box-sizing: border-box;
+}
+
+#edu {
+  width: 100%;
+  /* min-height: 100%; */
+  padding: 5% 10%;
+  box-sizing: border-box;
 }
 
 .link {
