@@ -84,3 +84,8 @@ typings/
 
 # file upload folder
 static/uploadDir/
+
+ssl/
+static/._*
+*.swp
+._*
