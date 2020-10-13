@@ -84,6 +84,22 @@ document.getElementById("bolyai-link").addEventListener("click", () => {
   window.open("https://bolyai.ro/index.php", "_blank");
 });
 
+document.getElementById("github-link").addEventListener("click", () => {
+  window.open("https://github.com/buduboti/", "_blank");
+});
+
+document.getElementById("linkedin-link").addEventListener("click", () => {
+  window.open(
+    "https://www.linkedin.com/in/botond-barna-balás-11824baa/",
+    "_blank"
+  );
+});
+
+document.getElementById("message-info-name").value = "";
+document.getElementById("message-info-email").value = "";
+document.getElementById("message-info-subject").value = "";
+document.getElementById("message-info-msg").value = "";
+
 fetch("/projects")
   .then((response) => response.json())
   .then((obj) => {
