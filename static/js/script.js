@@ -1,4 +1,3 @@
-
 let labels = document.getElementById("nav-labels").getElementsByTagName("div");
 
 document.getElementById("nav-point-top").addEventListener("mouseenter", () => {
@@ -75,6 +74,14 @@ document.getElementById("nav-point-contact").addEventListener("click", () => {
 
 document.getElementById("scroll-div").addEventListener("click", () => {
   window.location.hash = "portfolio";
+});
+
+document.getElementById("ubb-link").addEventListener("click", () => {
+  window.open("http://www.cs.ubbcluj.ro/en/", "_blank");
+});
+
+document.getElementById("bolyai-link").addEventListener("click", () => {
+  window.open("https://bolyai.ro/index.php", "_blank");
 });
 
 fetch("/projects")

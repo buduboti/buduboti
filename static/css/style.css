@@ -122,7 +122,7 @@ canvas {
 #edu {
   width: 100%;
   /* min-height: 100%; */
-  padding: 5% 10%;
+  padding: 10% 10% 5% 10%;
   box-sizing: border-box;
 }
 
@@ -216,6 +216,68 @@ canvas {
 .project .project-links .non-working-link > p {
   color: #bbbbbb;
   font-size: 16px;
+}
+
+.education {
+  border-style: groove;
+  border-color: rgba(238, 238, 238, 0.2);
+  border-radius: 25px;
+  align: center;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.logo-div {
+  width: 30%;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#univ-logos {
+  display: flex;
+  flex-direction: row;
+  align: center;
+}
+
+.univ-logo-div {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.univ-logo {
+  vertical-align: middle;
+}
+
+#univ-logos {
+  display: flex;
+  flex-direction: row;
+  align: center;
+}
+
+.hs-logo-div {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hs-logo {
+  vertical-align: middle;
+}
+
+.edu-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edu-info-header {
+  display: flex;
+  flex-direction: row;
 }
 
 .blur-box {

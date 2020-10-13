@@ -37,8 +37,6 @@
 
     <div id="particles-js"></div>
     <div id="root">
-      <!-- particles.js container -->
-
       <div id="title">
         <div id="name-and-info">
           <h1 id="name">Balás Botond Barna</h1><br />
@@ -67,7 +65,6 @@
           </p>
         </div>
       </div>
-
       <div id="portfolio">
         {{#each projects}}
           <div class="project">
@@ -111,11 +108,42 @@
           </div>
         {{/each}}
       </div>
-
       <div id="edu">
+        <div class="education" id="bsc">
+          <div id="univ-logos" class="logo-div">
+            <div class="univ-logo-div">
+              <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+              <img src="/icons/ubb.png" height="150px" width="150px" class="univ-logo" />
+            </div>
+            <div class="univ-logo-div">
+              <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+              <img src="/icons/ubb-info.png" height="150px" width="150px" class="univ-logo" />
+            </div>
+          </div>
+          <div class="edu-info">
+            <div class="edu-info-header">
+              <h1>Babeș-Bolyai University @ Cluj Napoca</h1>
+              <p id="ubb-link" class="link">[link]</p>
+            </div>
+            <p><b>Faculty of Mathematics and Computer Science</b><br />Computer Science</p>
+          </div>
+        </div>
+        <div class="education" id="highschool">
+          <div id="hs-logos" class="logo-div">
+            <div class="hs-logo-div">
+              <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+              <img src="/icons/cimer.png" height="150px" class="hs-logo" />
+            </div>
+          </div>
+          <div class="edu-info">
+            <div class="edu-info-header">
+              <h1>Bolyai Farkas Theoretical High School @ Tg Mures</h1>
+              <p id="bolyai-link" class="link">[link]</p>
+            </div>
+            <p><b>Mathematics-Informatics</b><br />intensive Informatics</p>
+          </div>
+        </div>
       </div>
-
-
     </div>
     <div id="nav">
       <div id="nav-points">
