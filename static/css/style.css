@@ -294,17 +294,30 @@ canvas {
   flex-direction: row;
 }
 
+#contact-left {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
 #my-info {
   background: rgba(0,0,0,0.2);
   border-style: groove;
   border-color: rgba(238, 238, 238, 0.2);
   border-radius: 25px;
   padding: 30px 50px;
-  width: 40%;
   height: max-content; /* or min-content */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+#response-field {
+  border-style: groove;
+  border-radius: 25px;
+  padding: 30px 50px;
+  margin: 75px 25px 30px 25px;
+  visibility: hidden;
 }
 
 #social-media-div {
@@ -337,6 +350,12 @@ input {
   box-shadow: none;
   outline: none;
   transition: border-color 0.5s;
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
 }
 
 textarea {
@@ -349,6 +368,12 @@ textarea {
   box-shadow: none;
   outline: none;
   transition: border-color 0.5s;
+  -webkit-touch-callout: text;
+    -webkit-user-select: text;
+     -khtml-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
 }
 
 textarea:focus {
