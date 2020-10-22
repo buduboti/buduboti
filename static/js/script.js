@@ -287,6 +287,12 @@ function sendMessage() {
     headers: { "Content-type": "application/json; charset=UTF-8" },
     body: JSON.stringify(data),
   })
-    .then((_rest) => showSuccess())
+    .then((resp) => {
+      if (resp.status === "ok") {
+        showSuccess();
+      } else {
+        showError(resp.err);
+      }
+    })
     .catch((err) => showError(err));
 }

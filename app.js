@@ -71,11 +71,11 @@ app.post("/message", (req, res) => {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
-          reject(error);
         } else {
           console.log("Message sent: " + info.response);
         }
       });
+      res.json({ status: "ok" });
     })
     .catch((err) => res.json({ status: "err", err }));
 });
