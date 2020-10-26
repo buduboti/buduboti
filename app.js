@@ -6,7 +6,8 @@ const fs = require("fs"),
   bodyParser = require("body-parser"),
   nodemailer = require("nodemailer"),
   validators = require("./validators"),
-  projects = require("./projects.json");
+  projects = require("./projects.json"),
+  hobbies = require("./hobbies.json");
 
 const app = express();
 
@@ -49,6 +50,10 @@ let transporter = nodemailer.createTransport({
 
 app.use(bodyParser.json());
 
+app.use("/hobbies", (req, res) => {
+  res.status(200).json(hobbies);
+});
+
 app.use("/projects", (req, res) => {
   res.status(200).json(projects);
 });
@@ -64,18 +69,18 @@ app.post("/message", (req, res) => {
       let mailOptions = {
         from: req.body.email,
         to: user,
-        subject: `${req.body.subject} || ${req.body.name} @@ ${req.body.comp}`,
+        subject: `${req.body.subject} <${req.body.email}> || ${req.body.name} @@ ${req.body.comp}`,
         text: req.body.msg,
       };
-      console.log("CUCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCOS");
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
+          res.json({ status: "err", err: error.code });
         } else {
           console.log("Message sent: " + info.response);
+          res.json({ status: "ok" });
         }
       });
-      res.json({ status: "ok" });
     })
     .catch((err) => res.json({ status: "err", err }));
 });

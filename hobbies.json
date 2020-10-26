@@ -1,0 +1,29 @@
+{
+	"hobbies": [
+		{
+			"idx": 1,
+			"name": "Music",
+			"pic-path": "/project-pic/asm.gif",
+			"description": "I'm not just listening music at all time, but I'm playing several instruments. (Some of them better, some of them not that much.)"
+		},
+		{
+			"idx": 2,
+			"name": "Climbing",
+			"pic-path": "/project-pic/asm.gif",
+			"description": "I'm reacently going to climbing gym and when I can, I like to climb outdoor."
+		},
+		{
+			"idx": 3,
+			"name": "Cycling",
+			"pic-path": "/project-pic/asm.gif",
+			"description": "When I have to go somewhere, if I can I use my bicycle all the times."
+		},
+		{
+			"idx": 4,
+			"name": "Yuppi",
+			"link": "http://www.yuppicamp.ro",
+			"pic-path": "/project-pic/asm.gif",
+			"description": "I'm a volunteer at Yuppi camp."
+		}
+	]
+}

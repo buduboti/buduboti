@@ -18,12 +18,14 @@
 
     function scrollFadeOut(e) {
       if (window.scrollY !== 0) {
-        fadeOutEffect(document.getElementById("scroll-div"));
+        let target = document.getElementById("scroll-div");
+        fadeOutEffect(target);
+        target.removeEventListener("click", clickScrollIcon);
+        target.classList.remove("link");
       }
     }
 
     $(document).ready(() => {
-      // window.removeEventListener("scroll", scrollFadeOut);
       window.scrollTo(0, 0);
       setTimeout(() => { 
         window.addEventListener("scroll", scrollFadeOut);
@@ -37,178 +39,203 @@
 
     <div id="particles-js"></div>
     <div id="root">
-      <div id="title">
-        <div id="name-and-info">
-          <h1 id="name">Balás Botond Barna</h1><br />
-          <p>I want to be a Cyber Security Professional (Hacker).</p>
-          <p>Mostly I would like to do some job,<br />related to Linux/Networks/Protocols;</p>
-          <p>but I would accept anything what is related to the Cyber Security (like web).</p>
+      <div id="pages">
+        <div id="title">
+          <div id="name-and-info">
+            <h1 id="name">Balás Botond Barna</h1><br />
+            <p>I want to be a Cyber Security Professional (Hacker).</p>
+            <p>Mostly I would like to do some job,<br />related to Linux/Networks/Protocols;</p>
+            <p>but I would accept anything what is related to the Cyber Security (like web).</p>
+          </div>
+          <div id="skills">
+            <p>Favorite programming languages: C/C++, Python</p>
+            <p>Languages, which I want to learn (or practice more): Go, x86 Assembly</p>
+            <p>Prefered enviorement: zsh/neovim in a UNIX like OS</p>
+            <p>I use Git reacently.</p>
+            <p style="text-align: justify">I have experience in theese fields too:
+              AI,
+              Bash,
+              Databases (MsSQL, mongoDB),
+              Electronics (Arduino),
+              Graphics (OpenGL),
+              Logic & Functional programming (Prolog & Haskell),
+              Math (Algebra, Geometry, Mathematical Analysis, Statistics and Probability),
+              Network Protocols,
+              OOP (C++ & Java),
+              Regex,
+              Verification and Validation (cucumber),
+              Web programming (NodeJS)
+            </p>
+          </div>
         </div>
-        <div id="skills">
-          <p>Favorite programming languages: C/C++, Python</p>
-          <p>Languages, which I want to learn (or practice more): Go, x86 Assembly</p>
-          <p>Prefered enviorement: zsh/neovim in a UNIX like OS</p>
-          <p>I use Git reacently.</p>
-          <p style="text-align: justify">I have experience in theese fields too:
-            AI,
-            Bash,
-            Databases (MsSQL, mongoDB),
-            Electronics (Arduino),
-            Graphics (OpenGL),
-            Logic & Functional programming (Prolog & Haskell),
-            Math (Algebra, Geometry, Mathematical Analysis, Statistics and Probability),
-            Network Protocols,
-            OOP (C++ & Java),
-            Regex,
-            Verification and Validation (cucumber),
-            Web programming (NodeJS)
-          </p>
-        </div>
-      </div>
-      <div id="portfolio">
-        {{#each projects}}
-          <div class="project">
-            <div class="project-show">
-              <img src="{{gif-path}}">
-            </div>
-            <div class="project-info">
-              <div class="project-title">
-                <h2>{{name}}</h2>
+        <div id="portfolio">
+          <div id="project-title" class="page-title">
+            <h1>Portfolio</h1>
+          </div>
+          <div id="projects">
+            {{#each projects}}
+              <div class="project">
+                <div class="project-show">
+                  <img src="{{gif-path}}">
+                </div>
+                <div class="project-info">
+                  <div class="project-title">
+                    <h2>{{name}}</h2>
+                  </div>
+                  <div class="project-desc">
+                    <p>{{description}}</p>
+                    <p>I've used in this project:</p>
+                      <ul>
+                        {{#each used-technologies}}
+                          <li>{{this}}</li>
+                        {{/each}}
+                      </ul>
+                  </div>
+                </div>
+                <div class="project-links">
+                  {{#if link-to-code}}
+                    <div class="project-link-code link" id="project-link-code-{{idx}}">
+                        <p>Code</p>
+                    </div>
+                  {{else}}
+                    <div class="project-link-code non-working-link">
+                      <p>Code</p>
+                    </div>
+                  {{/if}}
+                  {{#if link-to-demo}}
+                    <div class="project-link-demo link" id="project-link-demo-{{idx}}">
+                        <p>Demo</p>
+                    </div>
+                  {{else}}
+                    <div class="project-link-demo non-working-link">
+                      <p>Demo</p>
+                    </div>
+                  {{/if}}
+                </div>
               </div>
-              <div class="project-desc">
-                <p>{{description}}</p>
-                <p>I've used in this project:</p>
-                  <ul>
-                    {{#each used-technologies}}
-                      <li>{{this}}</li>
-                    {{/each}}
-                  </ul>
+            {{/each}}
+          </div>
+        </div>
+        <div id="edu">
+          <div id="edu-title" class="page-title">
+            <h1>Educations</h1>
+          </div>
+          <div class="page-content" id="educations">
+            <div class="education" id="bsc">
+              <div id="univ-logos" class="logo-div">
+                <div class="univ-logo-div">
+                  <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+                  <img src="/icons/ubb.png" height="150px" width="150px" class="univ-logo" />
+                </div>
+                <div class="univ-logo-div">
+                  <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+                  <img src="/icons/ubb-info.png" height="150px" width="150px" class="univ-logo" />
+                </div>
+              </div>
+              <div class="edu-info">
+                <div class="edu-info-header">
+                  <h1>Babeș-Bolyai University @ Cluj Napoca</h1>
+                  <p id="ubb-link" class="link">[link]</p>
+                </div>
+                <p><b>Faculty of Mathematics and Computer Science</b><br />Computer Science</p>
               </div>
             </div>
-            <div class="project-links">
-              {{#if link-to-code}}
-                <div class="project-link-code link" id="project-link-code-{{idx}}">
-                    <p>Code</p>
+            <div class="education" id="highschool">
+              <div id="hs-logos" class="logo-div">
+                <div class="hs-logo-div">
+                  <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+                  <img src="/icons/cimer.png" height="150px" class="hs-logo" />
                 </div>
-              {{else}}
-                <div class="project-link-code non-working-link">
-                  <p>Code</p>
+              </div>
+              <div class="edu-info">
+                <div class="edu-info-header">
+                  <h1>Bolyai Farkas Theoretical High School @ Tg Mures</h1>
+                  <p id="bolyai-link" class="link">[link]</p>
                 </div>
-              {{/if}}
-              {{#if link-to-demo}}
-                <div class="project-link-demo link" id="project-link-demo-{{idx}}">
-                    <p>Demo</p>
-                </div>
-              {{else}}
-                <div class="project-link-demo non-working-link">
-                  <p>Demo</p>
-                </div>
-              {{/if}}
+                <p><b>Mathematics-Informatics</b><br />intensive Informatics</p>
+              </div>
             </div>
-          </div>
-        {{/each}}
-      </div>
-      <div id="edu">
-        <div class="education" id="bsc">
-          <div id="univ-logos" class="logo-div">
-            <div class="univ-logo-div">
-              <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
-              <img src="/icons/ubb.png" height="150px" width="150px" class="univ-logo" />
-            </div>
-            <div class="univ-logo-div">
-              <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
-              <img src="/icons/ubb-info.png" height="150px" width="150px" class="univ-logo" />
-            </div>
-          </div>
-          <div class="edu-info">
-            <div class="edu-info-header">
-              <h1>Babeș-Bolyai University @ Cluj Napoca</h1>
-              <p id="ubb-link" class="link">[link]</p>
-            </div>
-            <p><b>Faculty of Mathematics and Computer Science</b><br />Computer Science</p>
           </div>
         </div>
-        <div class="education" id="highschool">
-          <div id="hs-logos" class="logo-div">
-            <div class="hs-logo-div">
-              <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
-              <img src="/icons/cimer.png" height="150px" class="hs-logo" />
+        <div id="hobby">
+          <div id="hobby-title" class="page-title">
+            <h1>My Hobbies</h1>
+          </div>
+          <div class="page-content" id="hobby-page">
+            <div class="column" id="hobby-column-0">
+            </div>
+            <div class="column" id="hobby-column-1">
+            </div>
+            <div class="column" id="hobby-column-2">
+            </div>
+            <div class="column" id="hobby-column-3">
             </div>
           </div>
-          <div class="edu-info">
-            <div class="edu-info-header">
-              <h1>Bolyai Farkas Theoretical High School @ Tg Mures</h1>
-              <p id="bolyai-link" class="link">[link]</p>
+        </div>
+        <div id="contact">
+          <div id="contact-left">
+            <div id="my-info">
+              <h1>buduboti@yahoo.com</h1>
+              <div id="social-media-div">
+                <img src="/icons/github.png" id="github-link" class="link" />
+                <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
+              </div>
             </div>
-            <p><b>Mathematics-Informatics</b><br />intensive Informatics</p>
+            <div id="response-field">
+              <label id="response" />
+            </div>
+          </div>
+          <div id="contact-me">
+            <form action="javascript:sendMessage()">
+              <input type="text" id="message-info-name" name="name" placeholder="Name" required /> <br />
+              <input type="text" id="message-info-comp-name" name="comp-name" placeholder="Company (Optional)" /> <br />
+              <input type="email" id="message-info-email" name="email" placeholder="E-mail address" required /> <br />
+              <input type="text" id="message-info-subject" name="subject" placeholder="Subject (Optional)" /> <br />
+              <textarea id="message-info-msg" name="msg" placeholder="Message" ></textarea>
+              <input type="submit" value="Send" id="message-info-send" />
+            </form>
           </div>
         </div>
       </div>
-      <div id="hobby">
-      </div>
-      <div id="contact">
-        <div id="contact-left">
-          <div id="my-info">
-            <h1>buduboti@yahoo.com</h1>
-            <div id="social-media-div">
-              <img src="/icons/github.png" id="github-link" class="link" />
-              <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
-            </div>
+      <div id="nav">
+        <div id="nav-points">
+          <div id="nav-point-top" class="link">
+            <img src="/icons/point.png" />
           </div>
-          <div id="response-field">
-            <label id="response" />
+          <div id="nav-point-portfolio" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-edu" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-hobby" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-contact" class="link">
+            <img src="/icons/point.png" />
           </div>
         </div>
-        <div id="contact-me">
-          <form action="javascript:sendMessage()">
-            <input type="text" id="message-info-name" name="name" placeholder="Name" required /> <br />
-            <input type="text" id="message-info-comp-name" name="comp-name" placeholder="Company (Optional)" /> <br />
-            <input type="email" id="message-info-email" name="email" placeholder="E-mail address" required /> <br />
-            <input type="text" id="message-info-subject" name="subject" placeholder="Subject (Optional)" /> <br />
-            <textarea id="message-info-msg" name="msg" placeholder="Message" ></textarea>
-            <input type="submit" value="Send" id="message-info-send" />
-          </form>
+        <div id="nav-labels">
+          <div id="nav-label-top-div" class="blur-box" style="visibility: hidden">
+            <p>Index</p>
+          </div>
+          <div id="nav-label-portfolio-div" class="blur-box" style="visibility: hidden">
+            <p>Portfolio</p>
+          </div>
+          <div id="nav-label-edu-div" class="blur-box" style="visibility: hidden">
+            <p>Education</p>
+          </div>
+          <div id="nav-label-hobby-div" class="blur-box" style="visibility: hidden">
+            <p>Hobbies</p>
+          </div>
+          <div id="nav-label-contact-div" class="blur-box" style="visibility: hidden">
+            <p>Contact</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="nav">
-      <div id="nav-points">
-        <div id="nav-point-top" class="link">
-          <img src="/icons/point.png" />
-        </div>
-        <div id="nav-point-portfolio" class="link">
-          <img src="/icons/point.png" />
-        </div>
-        <div id="nav-point-edu" class="link">
-          <img src="/icons/point.png" />
-        </div>
-        <div id="nav-point-hobby" class="link">
-          <img src="/icons/point.png" />
-        </div>
-        <div id="nav-point-contact" class="link">
-          <img src="/icons/point.png" />
-        </div>
+      <div id="scroll-div" class="link">
+        <img src="/downArrow.png" />
       </div>
-      <div id="nav-labels">
-        <div id="nav-label-top-div" class="blur-box" style="visibility: hidden">
-          <p>Index</p>
-        </div>
-        <div id="nav-label-portfolio-div" class="blur-box" style="visibility: hidden">
-          <p>Portfolio</p>
-        </div>
-        <div id="nav-label-edu-div" class="blur-box" style="visibility: hidden">
-          <p>Education</p>
-        </div>
-        <div id="nav-label-hobby-div" class="blur-box" style="visibility: hidden">
-          <p>Hobbys</p>
-        </div>
-        <div id="nav-label-contact-div" class="blur-box" style="visibility: hidden">
-          <p>Contact</p>
-        </div>
-      </div>
-    </div>
-    <div id="scroll-div" class="link">
-      <img src="/downArrow.png" />
     </div>
     <!-- scripts -->
     <script src="js/particles.js"></script>

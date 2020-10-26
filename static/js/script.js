@@ -72,9 +72,13 @@ document.getElementById("nav-point-contact").addEventListener("click", () => {
   window.location.hash = "contact";
 });
 
-document.getElementById("scroll-div").addEventListener("click", () => {
+function clickScrollIcon() {
   window.location.hash = "portfolio";
-});
+}
+
+document
+  .getElementById("scroll-div")
+  .addEventListener("click", clickScrollIcon);
 
 document.getElementById("ubb-link").addEventListener("click", () => {
   window.open("http://www.cs.ubbcluj.ro/en/", "_blank");
@@ -96,6 +100,7 @@ document.getElementById("linkedin-link").addEventListener("click", () => {
 });
 
 document.getElementById("message-info-name").value = "";
+document.getElementById("message-info-comp-name").value = "";
 document.getElementById("message-info-email").value = "";
 document.getElementById("message-info-subject").value = "";
 document.getElementById("message-info-msg").value = "";
@@ -121,6 +126,43 @@ fetch("/projects")
     });
   });
 
+fetch("/hobbies")
+  .then((response) => response.json())
+  .then((obj) => {
+    obj.hobbies.forEach((hobby) => {
+      let hobby_div = document.createElement("DIV");
+      hobby_div.classList.add("hobby-div");
+      hobby_div.id = `hobby-idx-${hobby.idx}`;
+      let img = document.createElement("IMG");
+      img.src = hobby["pic-path"];
+      img.classList.add("hobby-pic");
+      hobby_div.appendChild(document.createElement("DIV").appendChild(img));
+      let info = hobby_div.appendChild(document.createElement("DIV"));
+      info.classList.add("hobby-info");
+      let title = document.createElement("DIV");
+      title.classList.add("hobby-title");
+      let h2 = document.createElement("H2");
+      h2.innerHTML = hobby.name;
+      title.appendChild(h2);
+      if (hobby["link"]) {
+        title.classList.add("link");
+        title.addEventListener("click", () => {
+          window.open(hobby["link"], "_blank");
+        });
+      }
+      info.appendChild(title);
+      let desc = document.createElement("DIV");
+      desc.classList.add("hobby-desc");
+      let par = document.createElement("P");
+      par.innerHTML = hobby.description;
+      desc.appendChild(par);
+      info.appendChild(desc);
+
+      document
+        .getElementById(`hobby-column-${hobby.idx % 4}`)
+        .appendChild(hobby_div);
+    });
+  });
 function showSuccess() {
   document.getElementById("response").innerHTML =
     "The message has been sent successfully.";
@@ -216,9 +258,12 @@ document
       "#408040";
   });
 
-document.getElementById("message-info-subj").addEventListener("focusin", () => {
-  document.getElementById("message-info-subj").style.borderColor = "#408040";
-});
+document
+  .getElementById("message-info-subject")
+  .addEventListener("focusin", () => {
+    document.getElementById("message-info-subject").style.borderColor =
+      "#408040";
+  });
 
 document
   .getElementById("message-info-email")
@@ -287,12 +332,22 @@ function sendMessage() {
     headers: { "Content-type": "application/json; charset=UTF-8" },
     body: JSON.stringify(data),
   })
+    .then((response) => response.json())
     .then((resp) => {
+      console.log(resp);
       if (resp.status === "ok") {
         showSuccess();
       } else {
         showError(resp.err);
       }
+      setTimeout(() => {
+        document.getElementById("response-field").style.opacity = "0";
+      }, 3000);
     })
-    .catch((err) => showError(err));
+    .catch((err) => {
+      showError(err);
+      setTimeout(() => {
+        document.getElementById("response-field").style.opacity = "0";
+      }, 3000);
+    });
 }

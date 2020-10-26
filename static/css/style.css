@@ -63,11 +63,16 @@ canvas {
 #root {
   width: 100%;
   height: 100%;
+}
+
+#pages {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-#root > div {
+#pages > div {
   position: relative;
   min-height: 100%;
 }
@@ -118,7 +123,7 @@ canvas {
 
 #edu {
   width: 100%;
-  padding: 10% 10% 5% 10%;
+  padding: 5% 10%;
   box-sizing: border-box;
 }
 
@@ -127,6 +132,35 @@ canvas {
   width: 100%;
   padding: 5% 10%;
   box-sizing: border-box;
+}
+
+#hobby-page {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#hobby-page > div {
+  flex: 25%;
+  max-width: 25%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.hobby-div { 
+  border-style: groove;
+  border-color: rgba(238, 238, 238, 0.2);
+  border-radius: 25px;
+}
+
+.hobby-pic { 
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  width: 100%;
+}
+
+.hobby-info {
+  padding: 5px;
 }
 
 #contact {
@@ -142,6 +176,16 @@ canvas {
 
 .link {
   cursor: pointer;
+}
+
+.page-content {
+  width: 100%;
+}
+
+.page-title > h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 48px;
 }
 
 .project {
@@ -318,6 +362,8 @@ canvas {
   padding: 30px 50px;
   margin: 75px 25px 30px 25px;
   visibility: hidden;
+  /* transition: opacity 2s; */
+  transition:  2s;
 }
 
 #social-media-div {
@@ -449,3 +495,21 @@ input:focus {
   color: #bbbbbb;
   font-size: 16px;
 }
+
+
+/* /* Responsive layout - makes a two column-layout instead of four columns */ */
+/* @media (max-width: 800px) { */
+/*   .column { */
+/*     flex: 50%; */
+/*     max-width: 50%; */
+/*   } */
+/* } */
+/*  */
+/* /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */ */
+/* @media (max-width: 600px) { */
+/*   .column { */
+/*     flex: 100%; */
+/*     max-width: 100%; */
+/*   } */
+/* } */
+
