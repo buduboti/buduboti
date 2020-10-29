@@ -1,11 +1,19 @@
+let g_ham = 0;
 let labels = document.getElementById("nav-labels").getElementsByTagName("div");
+let label_arr = Array.from(labels);
+
+const portrait = window.matchMedia("(orientation: portrait)");
 
 document.getElementById("nav-point-top").addEventListener("mouseenter", () => {
-  labels[0].style.visibility = "visible";
+  if (!portrait.matches) {
+    labels[0].style.visibility = "visible";
+  }
 });
 
 document.getElementById("nav-point-top").addEventListener("mouseleave", () => {
-  labels[0].style.visibility = "hidden";
+  if (!portrait.matches) {
+    labels[0].style.visibility = "hidden";
+  }
 });
 
 document.getElementById("nav-point-top").addEventListener("click", () => {
@@ -15,13 +23,17 @@ document.getElementById("nav-point-top").addEventListener("click", () => {
 document
   .getElementById("nav-point-portfolio")
   .addEventListener("mouseenter", () => {
-    labels[1].style.visibility = "visible";
+    if (!portrait.matches) {
+      labels[1].style.visibility = "visible";
+    }
   });
 
 document
   .getElementById("nav-point-portfolio")
   .addEventListener("mouseleave", () => {
-    labels[1].style.visibility = "hidden";
+    if (!portrait.matches) {
+      labels[1].style.visibility = "hidden";
+    }
   });
 
 document.getElementById("nav-point-portfolio").addEventListener("click", () => {
@@ -29,11 +41,15 @@ document.getElementById("nav-point-portfolio").addEventListener("click", () => {
 });
 
 document.getElementById("nav-point-edu").addEventListener("mouseenter", () => {
-  labels[2].style.visibility = "visible";
+  if (!portrait.matches) {
+    labels[2].style.visibility = "visible";
+  }
 });
 
 document.getElementById("nav-point-edu").addEventListener("mouseleave", () => {
-  labels[2].style.visibility = "hidden";
+  if (!portrait.matches) {
+    labels[2].style.visibility = "hidden";
+  }
 });
 
 document.getElementById("nav-point-edu").addEventListener("click", () => {
@@ -43,13 +59,17 @@ document.getElementById("nav-point-edu").addEventListener("click", () => {
 document
   .getElementById("nav-point-hobby")
   .addEventListener("mouseenter", () => {
-    labels[3].style.visibility = "visible";
+    if (!portrait.matches) {
+      labels[3].style.visibility = "visible";
+    }
   });
 
 document
   .getElementById("nav-point-hobby")
   .addEventListener("mouseleave", () => {
-    labels[3].style.visibility = "hidden";
+    if (!portrait.matches) {
+      labels[3].style.visibility = "hidden";
+    }
   });
 
 document.getElementById("nav-point-hobby").addEventListener("click", () => {
@@ -59,13 +79,17 @@ document.getElementById("nav-point-hobby").addEventListener("click", () => {
 document
   .getElementById("nav-point-contact")
   .addEventListener("mouseenter", () => {
-    labels[4].style.visibility = "visible";
+    if (!portrait.matches) {
+      labels[4].style.visibility = "visible";
+    }
   });
 
 document
   .getElementById("nav-point-contact")
   .addEventListener("mouseleave", () => {
-    labels[4].style.visibility = "hidden";
+    if (!portrait.matches) {
+      labels[4].style.visibility = "hidden";
+    }
   });
 
 document.getElementById("nav-point-contact").addEventListener("click", () => {
@@ -79,6 +103,20 @@ function clickScrollIcon() {
 document
   .getElementById("scroll-div")
   .addEventListener("click", clickScrollIcon);
+
+document.getElementById("hamburger").addEventListener("click", () => {
+  label_arr.map((x) => (x.style.visibility = "visible"));
+  $("#hamburger").fadeOut();
+  $("#nav").css("display", "flex").hide().fadeIn();
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.id !== "hamburger-img") {
+    $("#nav").fadeOut();
+    $("#hamburger").fadeIn();
+    label_arr.map((x) => (x.style.visibility = "visible"));
+  }
+});
 
 document.getElementById("ubb-link").addEventListener("click", () => {
   window.open("http://www.cs.ubbcluj.ro/en/", "_blank");

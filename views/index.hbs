@@ -177,29 +177,37 @@
           </div>
         </div>
         <div id="contact">
-          <div id="contact-left">
-            <div id="my-info">
-              <h1 id="my-email">buduboti@yahoo.com</h1>
-              <div id="social-media-div">
-                <img src="/icons/github.png" id="github-link" class="link" />
-                <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
+          <div id="contact-title" class="page-title">
+            <h1>Contact me</h1>
+          </div>
+          <div class="page-content" id="contact-page">
+            <div id="contact-left">
+              <div id="my-info">
+                <h1 id="my-email">buduboti@yahoo.com</h1>
+                <div id="social-media-div">
+                  <img src="/icons/github.png" id="github-link" class="link" />
+                  <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
+                </div>
+              </div>
+              <div id="response-field">
+                <label id="response" />
               </div>
             </div>
-            <div id="response-field">
-              <label id="response" />
+            <div id="contact-me">
+              <form action="javascript:sendMessage()">
+                <input type="text" id="message-info-name" name="name" placeholder="Name" required /> <br />
+                <input type="text" id="message-info-comp-name" name="comp-name" placeholder="Company (Optional)" /> <br />
+                <input type="email" id="message-info-email" name="email" placeholder="E-mail address" required /> <br />
+                <input type="text" id="message-info-subject" name="subject" placeholder="Subject (Optional)" /> <br />
+                <textarea id="message-info-msg" name="msg" placeholder="Message" ></textarea>
+                <input type="submit" value="Send" id="message-info-send" />
+              </form>
             </div>
           </div>
-          <div id="contact-me">
-            <form action="javascript:sendMessage()">
-              <input type="text" id="message-info-name" name="name" placeholder="Name" required /> <br />
-              <input type="text" id="message-info-comp-name" name="comp-name" placeholder="Company (Optional)" /> <br />
-              <input type="email" id="message-info-email" name="email" placeholder="E-mail address" required /> <br />
-              <input type="text" id="message-info-subject" name="subject" placeholder="Subject (Optional)" /> <br />
-              <textarea id="message-info-msg" name="msg" placeholder="Message" ></textarea>
-              <input type="submit" value="Send" id="message-info-send" />
-            </form>
-          </div>
         </div>
+      </div>
+      <div id="hamburger" class="link">
+        <img id="hamburger-img" src="/icons/hamburger.png" />
       </div>
       <div id="nav">
         <div id="nav-points">
