@@ -170,7 +170,10 @@ function showSuccess() {
     "rgba(100, 200, 100, 0.2)";
   document.getElementById("response-field").style.background =
     "rgba(100, 200, 100, 0.1)";
-  document.getElementById("response-field").style.visibility = "visible";
+  document.getElementById("response-field").style.display = "block";
+  setTimeout(function () {
+    document.getElementById("response-field").style.opacity = 1;
+  }, 100);
 }
 
 function showError(err) {
@@ -179,7 +182,10 @@ function showError(err) {
     "rgba(200, 100, 100, 0.2)";
   document.getElementById("response-field").style.background =
     "rgba(200, 100, 100, 0.1)";
-  document.getElementById("response-field").style.visibility = "visible";
+  document.getElementById("response-field").style.display = "block";
+  setTimeout(function () {
+    document.getElementById("response-field").style.opacity = 1;
+  }, 100);
 }
 
 document
@@ -326,28 +332,35 @@ function sendMessage() {
     return;
   }
   let data = { name, comp, email, subject, msg };
-  console.log(data);
   fetch("/message", {
     method: "POST",
     headers: { "Content-type": "application/json; charset=UTF-8" },
     body: JSON.stringify(data),
   })
-    .then((response) => response.json())
+    .then((response) => {
+      return response.json();
+    })
     .then((resp) => {
-      console.log(resp);
       if (resp.status === "ok") {
+        console.log("Message sent");
         showSuccess();
       } else {
         showError(resp.err);
       }
       setTimeout(() => {
-        document.getElementById("response-field").style.opacity = "0";
+        document.getElementById("response-field").style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("response-field").style.display = "none";
+        }, 1000);
       }, 3000);
     })
     .catch((err) => {
       showError(err);
       setTimeout(() => {
-        document.getElementById("response-field").style.opacity = "0";
+        document.getElementById("response-field").style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("response-field").style.display = "none";
+        }, 1000);
       }, 3000);
     });
 }

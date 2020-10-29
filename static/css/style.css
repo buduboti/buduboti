@@ -204,7 +204,7 @@ canvas {
   align: center;
   position: relative;
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
@@ -252,6 +252,7 @@ canvas {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 20px;
 }
 
 .edu-info-header {
@@ -282,9 +283,9 @@ canvas {
   border-radius: 25px;
   padding: 30px 50px;
   margin: 75px 25px 30px 25px;
-  visibility: hidden;
-  /* transition: opacity 2s; */
-  transition:  2s;
+  opacity: 0;
+  display: none;
+  transition: 2s;
 }
 
 #social-media-div {
@@ -448,6 +449,7 @@ input:focus {
   justify-content: space-between;
   padding: 30px;
   width: 60%;
+  box-sizing: border-box;
 }
 
 .project .project-right-side .project-info {
@@ -642,6 +644,15 @@ input:focus {
   }
 }
 
+/* width < 1200 */
+@media 
+    (max-width: 1199px)
+    {
+   #name, #my-email {
+     font-size: 20px;
+   }
+}
+
 /* width < 1200 | landscape */
 @media 
     (max-width: 1199px) and (orientation: landscape),
@@ -653,9 +664,6 @@ input:focus {
   .at1200px {
     display: block;
   }
-   #name, #my-email {
-     font-size: 20px;
-   }
   .project .project-show {
     width: 30%;
   }
@@ -664,10 +672,9 @@ input:focus {
   }
 }
 
-/* width < 1080 | landscape */
+/* width < 1080 */
 @media 
-    (max-width: 1080px) and (orientation: landscape),
-    (max-width: 1080px) and (orientation: unset)
+    (max-width: 1080px)
     {
    #name, #my-email {
      font-size: 15px;
@@ -697,10 +704,22 @@ input:focus {
   #my-info { 
     padding: 20px 30px;
   }
-
   .hobby-column {
     flex: 100%;
     max-width: 100%;
+  }
+  #contact {
+    flex-direction: column;
+  }
+  #contact-left {
+    width: 100%;
+  }
+  #my-email {
+    font-size: 20px;
+  }
+  #contact-me {
+    padding: 30px 0px;
+    width: 100%;
   }
 }
 
@@ -749,5 +768,24 @@ input:focus {
   .hobby-column {
     flex: 100%;
     max-width: 100%;
+  }
+  #contact {
+    flex-direction: column;
+  }
+  #contact-left {
+    width: 100%;
+  }
+  #my-email {
+    font-size: 20px;
+  }
+  #contact-me {
+    padding: 30px 0px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  #univ-logos {
+    flex-direction: column;
   }
 }
