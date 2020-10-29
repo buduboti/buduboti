@@ -845,5 +845,14 @@ input:focus {
   #skills {
     padding: 10px 0px;
   }
+  #title {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
 }
 
+@media (max-width: 350px) {
+  #title {
+    padding-top: 0px;
+  }
+}
