@@ -830,6 +830,9 @@ input:focus {
   #skills {
     padding: 30px 0px;
   }
+  #scroll-div {
+    display: none;
+  }
 }
 
 @media (max-width: 420px) {
