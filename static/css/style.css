@@ -789,3 +789,18 @@ input:focus {
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  #univ-logos {
+    flex-direction: column;
+  }
+  #my-email {
+    text-align: justify;
+    width: 100%;
+    font-size: 15px;
+  }
+  #my-info {
+    padding: 30px 20px;
+  }
+}
+
