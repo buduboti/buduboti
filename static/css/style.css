@@ -528,6 +528,20 @@ input:focus {
   height: 20px;
 }
 
+.logo-div > div > img {
+  width: 150px;
+}
+
+#dark-bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
 /* (width <= 800 & landscape) || portrait */
 @media
     (max-width: 800) and (orientation: landscape),
@@ -845,8 +859,8 @@ input:focus {
 }
 
 @media (max-width: 420px) {
-  #univ-logos {
-    flex-direction: column;
+  .logo-div > div > img {
+    width: 110px;
   }
   #skills > p {
     font-size: smaller;
