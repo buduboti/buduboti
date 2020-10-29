@@ -75,6 +75,7 @@ canvas {
 #pages > div {
   position: relative;
   min-height: 100%;
+  flex-shrink: 0;
 }
 
 #title {
