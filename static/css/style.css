@@ -60,6 +60,10 @@ canvas {
 
 /* ---- others ---- */
 
+div {
+  box-sizing: border-box;
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -801,6 +805,27 @@ input:focus {
   }
   #my-info {
     padding: 30px 20px;
+  }
+
+  .education {
+    flex-direction: column;
+  }
+  #univ-logos {
+    flex-direction: row;
+  }
+  .logo-div {
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+  }
+  .edu-info {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width:420px) {
+  #univ-logos {
+    flex-direction: column;
   }
 }
 
