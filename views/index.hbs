@@ -33,7 +33,9 @@
     });
   </script>
     <title>Balás Botond Barna</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" media="screen" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
 
@@ -78,39 +80,41 @@
                 <div class="project-show">
                   <img src="{{gif-path}}">
                 </div>
-                <div class="project-info">
-                  <div class="project-title">
-                    <h2>{{name}}</h2>
+                <div class="project-right-side">
+                  <div class="project-info">
+                    <div class="project-title">
+                      <h2>{{name}}</h2>
+                    </div>
+                    <div class="project-desc">
+                      <p>{{description}}</p>
+                      <p>I've used in this project:</p>
+                        <ul>
+                          {{#each used-technologies}}
+                            <li>{{this}}</li>
+                          {{/each}}
+                        </ul>
+                    </div>
                   </div>
-                  <div class="project-desc">
-                    <p>{{description}}</p>
-                    <p>I've used in this project:</p>
-                      <ul>
-                        {{#each used-technologies}}
-                          <li>{{this}}</li>
-                        {{/each}}
-                      </ul>
-                  </div>
-                </div>
-                <div class="project-links">
-                  {{#if link-to-code}}
-                    <div class="project-link-code link" id="project-link-code-{{idx}}">
+                  <div class="project-links">
+                    {{#if link-to-code}}
+                      <div class="project-link-code link" id="project-link-code-{{idx}}">
+                          <p>Code</p>
+                      </div>
+                    {{else}}
+                      <div class="project-link-code non-working-link">
                         <p>Code</p>
-                    </div>
-                  {{else}}
-                    <div class="project-link-code non-working-link">
-                      <p>Code</p>
-                    </div>
-                  {{/if}}
-                  {{#if link-to-demo}}
-                    <div class="project-link-demo link" id="project-link-demo-{{idx}}">
+                      </div>
+                    {{/if}}
+                    {{#if link-to-demo}}
+                      <div class="project-link-demo link" id="project-link-demo-{{idx}}">
+                          <p>Demo</p>
+                      </div>
+                    {{else}}
+                      <div class="project-link-demo non-working-link">
                         <p>Demo</p>
-                    </div>
-                  {{else}}
-                    <div class="project-link-demo non-working-link">
-                      <p>Demo</p>
-                    </div>
-                  {{/if}}
+                      </div>
+                    {{/if}}
+                  </div>
                 </div>
               </div>
             {{/each}}
@@ -134,7 +138,7 @@
               </div>
               <div class="edu-info">
                 <div class="edu-info-header">
-                  <h1>Babeș-Bolyai University @ Cluj Napoca</h1>
+                  <h1>Babeș-Bolyai University <br class="at1200px" />@ Cluj Napoca</h1>
                   <p id="ubb-link" class="link">[link]</p>
                 </div>
                 <p><b>Faculty of Mathematics and Computer Science</b><br />Computer Science</p>
@@ -149,7 +153,7 @@
               </div>
               <div class="edu-info">
                 <div class="edu-info-header">
-                  <h1>Bolyai Farkas Theoretical High School @ Tg Mures</h1>
+                  <h1>Bolyai Farkas Theoretical <br class="at1200px" />High School <br class="at1366px" />@ Tg Mures</h1>
                   <p id="bolyai-link" class="link">[link]</p>
                 </div>
                 <p><b>Mathematics-Informatics</b><br />intensive Informatics</p>
@@ -162,20 +166,20 @@
             <h1>My Hobbies</h1>
           </div>
           <div class="page-content" id="hobby-page">
-            <div class="column" id="hobby-column-0">
+            <div id="hobby-column-0" class="hobby-column">
             </div>
-            <div class="column" id="hobby-column-1">
+            <div id="hobby-column-1" class="hobby-column">
             </div>
-            <div class="column" id="hobby-column-2">
+            <div id="hobby-column-2" class="hobby-column">
             </div>
-            <div class="column" id="hobby-column-3">
+            <div id="hobby-column-3" class="hobby-column">
             </div>
           </div>
         </div>
         <div id="contact">
           <div id="contact-left">
             <div id="my-info">
-              <h1>buduboti@yahoo.com</h1>
+              <h1 id="my-email">buduboti@yahoo.com</h1>
               <div id="social-media-div">
                 <img src="/icons/github.png" id="github-link" class="link" />
                 <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
