@@ -187,10 +187,15 @@ fetch("/hobbies")
       h2.innerHTML = hobby.name;
       title.appendChild(h2);
       if (hobby["link"]) {
-        title.classList.add("link");
-        title.addEventListener("click", () => {
+        title.style.display = "flex";
+        title.style.flexDirection = "row";
+        let link = document.createElement("P");
+        link.innerHTML = "[link]";
+        link.classList.add("link");
+        link.addEventListener("click", () => {
           window.open(hobby["link"], "_blank");
         });
+        title.appendChild(link);
       }
       info.appendChild(title);
       let desc = document.createElement("DIV");
