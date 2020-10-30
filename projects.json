@@ -17,7 +17,7 @@
 		{
 			"idx": 1,
 			"name": "Restaurant booker website",
-			"gif-path": "/project-pic/asm.gif",
+			"gif-path": "/project-pic/web.gif",
 			"description": "A Website where restaurant owners can register their websites and other users can book reservations.",
 			"used-technologies": [
 				"Authentication & Authorization",
