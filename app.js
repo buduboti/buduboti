@@ -30,23 +30,23 @@ let transporter = nodemailer.createTransport({
 });
 
 // Certificate
-// const privateKey = fs.readFileSync(
-//   "/etc/letsencrypt/live/balasbotond.xyz/privkey.pem",
-//   "utf8"
-// );
-// const certificate = fs.readFileSync(
-//   "/etc/letsencrypt/live/balasbotond.xyz/cert.pem",
-//   "utf8"
-// );
-// const ca = fs.readFileSync(
-//   "/etc/letsencrypt/live/balasbotond.xyz/chain.pem",
-//   "utf8"
-// );
-// const credentials = {
-//   key: privateKey,
-//   cert: certificate,
-//   ca: ca,
-// };
+const privateKey = fs.readFileSync(
+  "/etc/letsencrypt/live/balasbotond.xyz/privkey.pem",
+  "utf8"
+);
+const certificate = fs.readFileSync(
+  "/etc/letsencrypt/live/balasbotond.xyz/cert.pem",
+  "utf8"
+);
+const ca = fs.readFileSync(
+  "/etc/letsencrypt/live/balasbotond.xyz/chain.pem",
+  "utf8"
+);
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca,
+};
 
 app.use(bodyParser.json());
 
@@ -69,7 +69,7 @@ app.post("/message", (req, res) => {
       let mailOptions = {
         from: req.body.email,
         to: user,
-        subject: `${req.body.subject} <${req.body.email}> || ${req.body.name} @@ ${req.body.comp}`,
+        subject: `${req.body.subject} || ${req.body.name} <${req.body.email}> @@ ${req.body.comp}`,
         text: req.body.msg,
       };
       transporter.sendMail(mailOptions, (error, info) => {
@@ -89,19 +89,19 @@ app.use("/", (req, res) => {
   res.status(200).render("index", projects);
 });
 
-// // Starting both http & https servers
-// const httpServer = http.createServer((req, res) => {
-//   res.writeHead(301, { Location: "https://" + req.headers.host + req.url });
-//   res.end();
-// });
-// const httpsServer = https.createServer(credentials, app);
+// Starting both http & https servers
+const httpServer = http.createServer((req, res) => {
+  res.writeHead(301, { Location: "https://" + req.headers.host + req.url });
+  res.end();
+});
+const httpsServer = https.createServer(credentials, app);
 
-const httpServer = http.createServer(app);
+// const httpServer = http.createServer(app);
 
 httpServer.listen(8080, () => {
   console.log("HTTP Server running on port 8080");
 });
 
-// httpsServer.listen(8443, () => {
-//   console.log("HTTPS Server running on port 8443");
-// });
+httpsServer.listen(8443, () => {
+  console.log("HTTPS Server running on port 8443");
+});
