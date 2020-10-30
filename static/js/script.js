@@ -112,11 +112,13 @@ document.getElementById("hamburger").addEventListener("click", () => {
 });
 
 document.addEventListener("click", (e) => {
-  if (e.target.id !== "hamburger-img") {
-    $("#nav").fadeOut(200);
-    $("#dark-bg").fadeOut(200);
-    $("#hamburger").fadeIn(200);
-    label_arr.map((x) => (x.style.visibility = "visible"));
+  if (portrait.matches) {
+    if (e.target.id !== "hamburger-img") {
+      $("#nav").fadeOut(200);
+      $("#dark-bg").fadeOut(200);
+      $("#hamburger").fadeIn(200);
+      label_arr.map((x) => (x.style.visibility = "visible"));
+    }
   }
 });
 
