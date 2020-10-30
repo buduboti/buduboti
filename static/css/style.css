@@ -528,9 +528,11 @@ input:focus {
   height: 20px;
 }
 
-.logo-div > div > img {
-  /* width: 150px; */
-  height: 150px;
+@media (min-width: 421px) {
+  .logo-div > div > img {
+    width: auto;
+    height: 150px;
+  }
 }
 
 #dark-bg {
@@ -862,6 +864,9 @@ input:focus {
 @media (max-width: 420px) {
   .logo-div > div > img {
     width: 110px;
+  }
+  .univ-logo {
+    height: 110px;
   }
   #skills > p {
     font-size: smaller;
