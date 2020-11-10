@@ -16,13 +16,17 @@ app.use(express.static("static"));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
-let user = "balasbotond@gmail.com";
-let pass = "zYpxup-nowju7-serhof";
-// let user = process.env.GMAIL_MAIL;
-// let pass = process.env.GMAIL_PASS;
+require('dotenv').config();
+
+let user = process.env.GMAIL_MAIL;
+let pass = process.env.GMAIL_PASS;
 
 let transporter = nodemailer.createTransport({
-  service: "gmail",
+  // service: "gmail",
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
+  requireTLS: true,
   auth: {
     user,
     pass,
@@ -67,7 +71,7 @@ app.post("/message", (req, res) => {
     .then(() => validators.msgValidator(req.body.msg))
     .then(() => {
       let mailOptions = {
-        from: req.body.email,
+        from: user,
         to: user,
         subject: `${req.body.subject} || ${req.body.name} <${req.body.email}> @@ ${req.body.comp}`,
         text: req.body.msg,
@@ -75,7 +79,7 @@ app.post("/message", (req, res) => {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
-          res.json({ status: "err", err: error.errno });
+          res.json({ status: "err", err: error.message });
         } else {
           console.log("Message sent: " + info.response);
           res.json({ status: "ok" });
