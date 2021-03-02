@@ -108,6 +108,7 @@ document.getElementById("hamburger").addEventListener("click", () => {
   label_arr.map((x) => (x.style.visibility = "visible"));
   $("#hamburger").fadeOut(200);
   $("#dark-bg").fadeIn(200);
+  $("#glider").fadeIn(200);
   $("#nav").css("display", "flex").hide().fadeIn(200);
 });
 
@@ -116,6 +117,7 @@ document.addEventListener("click", (e) => {
     if (e.target.id !== "hamburger-img") {
       $("#nav").fadeOut(200);
       $("#dark-bg").fadeOut(200);
+      $("#glider").fadeOut(200);
       $("#hamburger").fadeIn(200);
       label_arr.map((x) => (x.style.visibility = "visible"));
     }
