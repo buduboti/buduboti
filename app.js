@@ -35,21 +35,16 @@ let transporter = nodemailer.createTransport({
 
 // Certificate
 const privateKey = fs.readFileSync(
-  "/etc/letsencrypt/live/balasbotond.xyz/privkey.pem",
+  "/etc/letsencrypt/live/buduboti.xyz/privkey.pem",
   "utf8"
 );
-const certificate = fs.readFileSync(
-  "/etc/letsencrypt/live/balasbotond.xyz/cert.pem",
-  "utf8"
-);
-const ca = fs.readFileSync(
-  "/etc/letsencrypt/live/balasbotond.xyz/chain.pem",
+const cert = fs.readFileSync(
+  "/etc/letsencrypt/live/buduboti.xyz/fullchain.pem",
   "utf8"
 );
 const credentials = {
   key: privateKey,
-  cert: certificate,
-  ca: ca,
+  cert,
 };
 
 app.use(bodyParser.json());
@@ -102,10 +97,10 @@ const httpsServer = https.createServer(credentials, app);
 
 // const httpServer = http.createServer(app);
 
-httpServer.listen(8080, () => {
-  console.log("HTTP Server running on port 8080");
+httpServer.listen(80, () => {
+  console.log("HTTP Server running on port 80");
 });
 
-httpsServer.listen(8443, () => {
-  console.log("HTTPS Server running on port 8443");
-});
+ httpsServer.listen(443, () => {
+   console.log("HTTPS Server running on port 443");
+ });
