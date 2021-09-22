@@ -27,6 +27,19 @@
 			],
 			"link-to-code": null,
 			"link-to-demo": "https://balasbotond.xyz:8081/"
+		},
+		{
+			"idx": 2,
+			"name": "Zapp",
+			"gif-path": "/project-pic/zapp.png",
+			"description": "An asynchronous messaging app for businesses.",
+			"used-technologies": [
+				"Docker containers",
+				"NodeJS",
+				"AWS"
+			],
+			"link-to-code": null,
+			"link-to-demo": "https://lets-zapp.com"
 		}
 	]
 }
