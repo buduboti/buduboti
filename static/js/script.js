@@ -143,6 +143,10 @@ document.getElementById("linkedin-link").addEventListener("click", () => {
   );
 });
 
+document.getElementById("stackoverflow-link").addEventListener("click", () => {
+  window.open("https://stackoverflow.com/users/story/5724857", "_blank");
+});
+
 document.getElementById("message-info-name").value = "";
 document.getElementById("message-info-comp-name").value = "";
 document.getElementById("message-info-email").value = "";

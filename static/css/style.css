@@ -156,6 +156,7 @@ div {
   border-style: groove;
   border-color: rgba(238, 238, 238, 0.2);
   border-radius: 25px;
+  margin-bottom: 10px;
 }
 
 .hobby-pic { 

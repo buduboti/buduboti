@@ -21,6 +21,9 @@ require('dotenv').config();
 let user = process.env.GMAIL_MAIL;
 let pass = process.env.GMAIL_PASS;
 
+console.log(`user: ${user}`);
+console.log(`pass: ${pass}`);
+
 let transporter = nodemailer.createTransport({
   // service: "gmail",
   host: 'smtp.gmail.com',
