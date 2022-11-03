@@ -1,1 +1,1 @@
-<script src="https://tryhackme.com/badge/188453"></script>
+![tryhackme stats](https://raw.githubusercontent.com/buduboti/buduboti/master/assets/thm_propic.png)
