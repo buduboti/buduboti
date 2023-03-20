@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@stackoverflow/stacks-icons"></script>
+  <script>
+    function fadeOutEffect(fadeTarget) {
+      var fadeEffectOut = setInterval(() => {
+        if (!fadeTarget.style.opacity) {
+          fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity > 0) {
+          fadeTarget.style.opacity -= 0.1;
+        } else {
+          clearInterval(fadeEffectOut);
+        }
+      }, 200);
+    }
+
+    function scrollFadeOut(e) {
+      if (window.scrollY !== 0) {
+        let target = document.getElementById("scroll-div");
+        fadeOutEffect(target);
+        target.removeEventListener("click", clickScrollIcon);
+        target.classList.remove("link");
+      }
+    }
+
+    $(document).ready(() => {
+      window.scrollTo(0, 0);
+      setTimeout(() => { 
+        window.addEventListener("scroll", scrollFadeOut);
+      }, 1000);
+    });
+  </script>
+    <title>Balás Botond Barna</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <div id="particles-js"></div>
+    <div id="root">
+      <div id="pages">
+        <div id="title">
+          <div id="name-and-info">
+            <h1 id="name">Balás Botond Barna</h1><br />
+			<p>I'm a SysAdmin,<br />who wants to be a Cyber Security professionalist.</p>
+          </div>
+          <div id="skills">
+			  <script src="https://tryhackme.com/badge/188453"></script>
+          </div>
+        </div>
+        <div id="portfolio">
+          <div id="project-title" class="page-title">
+            <h1>Portfolio</h1>
+          </div>
+          <div id="projects">
+              <div class="project">
+                <div class="project-show">
+                  <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--2iCelOVj--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/17g34k8qfwhl0syrf30y.png">
+                </div>
+                <div class="project-right-side">
+                  <div class="project-info">
+                    <div class="project-title">
+                      <h2>My Dotfiles</h2>
+                    </div>
+                    <div class="project-desc">
+                      <p>My personal configuration files for zsh, nvim &amp; tmux.</p>
+                      <p>I've used in this project:</p>
+                        <ul>
+                            <li>Shell (bash &amp; zsh)</li>
+                            <li>Vim script</li>
+                            <li>Browsing configuration files</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="project-links">
+                      <div class="project-link-code link" id="project-link-code-0">
+                          <p>Code</p>
+                      </div>
+                      <div class="project-link-demo non-working-link">
+                        <p>Demo</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project">
+                <div class="project-show">
+                  <img src="/project-pic/asm.gif">
+                </div>
+                <div class="project-right-side">
+                  <div class="project-info">
+                    <div class="project-title">
+                      <h2>Mandelbrot fractal in x86 Assembly</h2>
+                    </div>
+                    <div class="project-desc">
+                      <p>An optional university project.</p>
+                      <p>I've used in this project:</p>
+                        <ul>
+                            <li>Complex mathematical calculations</li>
+                            <li>SSE optimalization</li>
+                            <li>Choose between single/double float precision</li>
+                            <li>Input handling</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="project-links">
+                      <div class="project-link-code link" id="project-link-code-1">
+                          <p>Code</p>
+                      </div>
+                      <div class="project-link-demo non-working-link">
+                        <p>Demo</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project">
+                <div class="project-show">
+                  <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21vcnNlLWNvZGUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0&#x3D;">
+                </div>
+                <div class="project-right-side">
+                  <div class="project-info">
+                    <div class="project-title">
+                      <h2>Mor-C</h2>
+                    </div>
+                    <div class="project-desc">
+                      <p>A compilator for our own programming language, highly inspired by the morse code.</p>
+                      <p>I've used in this project:</p>
+                        <ul>
+                            <li>Bison</li>
+                            <li>Flex</li>
+                            <li>C</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="project-links">
+                      <div class="project-link-code link" id="project-link-code-2">
+                          <p>Code</p>
+                      </div>
+                      <div class="project-link-demo non-working-link">
+                        <p>Demo</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project">
+                <div class="project-show">
+                  <img src="/project-pic/2048.png">
+                </div>
+                <div class="project-right-side">
+                  <div class="project-info">
+                    <div class="project-title">
+                      <h2>2048-AI</h2>
+                    </div>
+                    <div class="project-desc">
+                      <p>An A.I. who plays 2048.</p>
+                      <p>I've used in this project:</p>
+                        <ul>
+                            <li>Monte Carlo tree search (MCTS)</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="project-links">
+                      <div class="project-link-code link" id="project-link-code-3">
+                          <p>Code</p>
+                      </div>
+                      <div class="project-link-demo non-working-link">
+                        <p>Demo</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project">
+                <div class="project-show">
+                  <img src="/project-pic/hacking.png">
+                </div>
+                <div class="project-right-side">
+                  <div class="project-info">
+                    <div class="project-title">
+                      <h2>Toolset for hacking</h2>
+                    </div>
+                    <div class="project-desc">
+                      <p>I&#x27;d like to develop a toolkit for hacking and since I began to solve tryhackme rooms, I&#x27;ve developed this.</p>
+                      <p>I've used in this project:</p>
+                        <ul>
+                            <li>A lot of tools, mostly listed in the repo</li>
+                            <li>My patience</li>
+                        </ul>
+                    </div>
+                  </div>
+                  <div class="project-links">
+                      <div class="project-link-code link" id="project-link-code-4">
+                          <p>Code</p>
+                      </div>
+                      <div class="project-link-demo non-working-link">
+                        <p>Demo</p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div id="edu">
+          <div id="edu-title" class="page-title">
+            <h1>Educations</h1>
+          </div>
+          <div class="page-content" id="educations">
+            <div class="education" id="bsc">
+              <div id="univ-logos" class="logo-div">
+                <div class="univ-logo-div">
+                  <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+                  <img src="/icons/ubb.png" class="univ-logo" />
+                </div>
+                <div class="univ-logo-div">
+                  <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+                  <img src="/icons/ubb-info.png" class="univ-logo" />
+                </div>
+              </div>
+              <div class="edu-info">
+                <div class="edu-info-header">
+                  <h1>Babeș-Bolyai University <br class="at1200px" />@ Cluj Napoca</h1>
+                  <p id="ubb-link" class="link">[link]</p>
+                </div>
+                <p><b>Faculty of Mathematics and Computer Science</b><br />Computer Science</p>
+              </div>
+            </div>
+            <div class="education" id="highschool">
+              <div id="hs-logos" class="logo-div">
+                <div class="hs-logo-div">
+                  <span style="display: inline-block; vertical-align: middle; height: 100%;"></span>
+                  <img src="/icons/cimer.png" class="hs-logo" />
+                </div>
+              </div>
+              <div class="edu-info">
+                <div class="edu-info-header">
+                  <h1>Bolyai Farkas Theoretical <br class="at1200px" />High School <br class="at1366px" />@ Tg Mures</h1>
+                  <p id="bolyai-link" class="link">[link]</p>
+                </div>
+                <p><b>Mathematics-Informatics</b><br />intensive Informatics</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="hobby">
+          <div id="hobby-title" class="page-title">
+            <h1>Hobbies & others</h1>
+          </div>
+          <div class="page-content" id="hobby-page">
+            <div id="hobby-column-0" class="hobby-column">
+            <div class="hobby-div" id="hobby-idx-4"><img src="/project-pic/Yuppi.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title" style="display: flex; flex-direction: row;"><h2>Yuppi</h2><p class="link">[link]</p></div><div class="hobby-desc"><p>I'm a volunteer at Yuppi camp.</p></div></div></div><div class="hobby-div" id="hobby-idx-8"><img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_673965992_20001333183785248481_392637.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Reading</h2></div><div class="hobby-desc"><p>Unfortunately I didn't read a lot. But after I've read the "Az Irodalom Visszavág", it brought my mood to read more.</p></div></div></div></div>
+            <div id="hobby-column-1" class="hobby-column">
+            <div class="hobby-div" id="hobby-idx-1"><img src="/project-pic/Music.png" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Music</h2></div><div class="hobby-desc"><p>I'm not just listening music at all time, but I'm playing several instruments. (Some of them better, some of them not that much.)</p></div></div></div><div class="hobby-div" id="hobby-idx-5"><img src="https://cdn.lifehack.org/wp-content/uploads/2013/09/jwj-slackline-0041.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Slackline</h2></div><div class="hobby-desc"><p>I'm not confident enough in the slackline yet, but work in progress and I'd like to try out highline too. (That's the main motivation.. : )</p></div></div></div></div>
+            <div id="hobby-column-2" class="hobby-column">
+            <div class="hobby-div" id="hobby-idx-2"><img src="/project-pic/Climbing.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Climbing</h2></div><div class="hobby-desc"><p>I'm reacently going to climbing gym and when I can, I like to climb outdoor.</p></div></div></div><div class="hobby-div" id="hobby-idx-6"><img src="/project-pic/12074799_917716184948104_2972705758196317023_n.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Fire Juggling</h2></div><div class="hobby-desc"><p>I do like juggling with several instruments and I like to spice the performance with fire if I'm confident enough with the instrument (like with poi).</p></div></div></div></div>
+            <div id="hobby-column-3" class="hobby-column">
+            <div class="hobby-div" id="hobby-idx-3"><img src="/project-pic/Bike.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Cycling</h2></div><div class="hobby-desc"><p>When I have to go somewhere, if I can I use my bicycle all the times.</p></div></div></div><div class="hobby-div" id="hobby-idx-7"><img src="https://cottagelife.com/wp-content/uploads/2017/05/shutterstock_382064143.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Crafting &amp; woodworking</h2></div><div class="hobby-desc"><p>I want to make my own furniture (and other stuffs) by my own hand.</p></div></div></div></div>
+          </div>
+        </div>
+        <div id="contact">
+          <div id="contact-title" class="page-title">
+            <h1>Contact me</h1>
+          </div>
+          <div class="page-content" id="contact-page">
+            <div id="contact-left">
+              <div id="my-info">
+                <h1 id="my-email">buduboti@buduboti.xyz</h1>
+                <div id="social-media-div">
+                  <img src="/icons/github.png" id="github-link" class="link" />
+                  <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
+                  <img src="/icons/stackoverflow.png" id="stackoverflow-link" class="link" />
+                </div>
+              </div>
+              <div id="response-field">
+                <label id="response" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="hamburger" class="link">
+        <img id="hamburger-img" src="/icons/hamburger.png" />
+      </div>
+      <div id="dark-bg">
+      </div>
+      <div id="glider">
+        <img id="glider-img" src="/icons/glider.png" />
+      </div>
+      <div id="nav">
+        <div id="nav-points">
+          <div id="nav-point-top" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-portfolio" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-edu" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-hobby" class="link">
+            <img src="/icons/point.png" />
+          </div>
+          <div id="nav-point-contact" class="link">
+            <img src="/icons/point.png" />
+          </div>
+        </div>
+        <div id="nav-labels">
+          <div id="nav-label-top-div" class="blur-box" style="visibility: hidden">
+            <p>Index</p>
+          </div>
+          <div id="nav-label-portfolio-div" class="blur-box" style="visibility: hidden">
+            <p>Portfolio</p>
+          </div>
+          <div id="nav-label-edu-div" class="blur-box" style="visibility: hidden">
+            <p>Education</p>
+          </div>
+          <div id="nav-label-hobby-div" class="blur-box" style="visibility: hidden">
+            <p>Hobbies & others</p>
+          </div>
+          <div id="nav-label-contact-div" class="blur-box" style="visibility: hidden">
+            <p>Contact</p>
+          </div>
+        </div>
+      </div>
+      <div id="scroll-div" class="link">
+        <img src="/downArrow.png" />
+      </div>
+    </div>
+    <!-- scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+      <script>
+        var count_particles, update;
+        count_particles = document.querySelector('.js-count-particles');
+        update = function() {
+          if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+          }
+          requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+      </script>
+  </body>
+</html>
+<!-- Background from https://github.com/VincentGarreau/particles.js/ -->
