@@ -98,8 +98,9 @@ div {
   border-style: groove;
   border-color: rgba(238, 238, 238, 0.2);
   border-radius: 25px;
-  padding: 30px 50px;
+  padding: 30px 50px 30px 30px;
   width: 40%;
+  margin-left: 10%;
   height: max-content; /* or min-content */
 }
 
@@ -117,6 +118,7 @@ div {
   color: #cccccc;
   margin: 0px;
   padding: 0px;
+  text-align: right;
 }
 
 #portfolio {
@@ -170,7 +172,6 @@ div {
 }
 
 #contact {
-  padding-top: 5%;
   padding-left: 15%;
   padding-right: 15%;
   position: absolute;
@@ -269,6 +270,8 @@ div {
   display: flex;
   flex-direction: column;
   width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 #my-info {
@@ -304,12 +307,6 @@ div {
   width: 50px;
   margin-left: 10px;
   margin-right: 10px;
-}
-
-#contact-me {
-  padding: 30px 50px;
-  width: 60%;
-  height: max-content; /* or min-content */
 }
 
 #glider {
@@ -763,10 +760,6 @@ input:focus {
   #my-email {
     font-size: 20px;
   }
-  #contact-me {
-    padding: 30px 0px;
-    width: 100%;
-  }
   #glider {
     bottom: 15px;
     right: 15px;
@@ -846,10 +839,6 @@ input:focus {
   }
   #my-email {
     font-size: 20px;
-  }
-  #contact-me {
-    padding: 30px 0px;
-    width: 100%;
   }
   #skills, #name-and-info {
     width: 100%;

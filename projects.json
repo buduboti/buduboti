@@ -15,19 +15,6 @@
 		},
 		{
 			"idx": 1,
-			"name": "Zapp",
-			"gif-path": "/project-pic/zapp.png",
-			"description": "An asynchronous messaging app for businesses.",
-			"used-technologies": [
-				"Docker containers",
-				"NodeJS",
-				"AWS"
-			],
-			"link-to-code": null,
-			"link-to-demo": "https://lets-zapp.com"
-		},
-		{
-			"idx": 2,
 			"name": "Mandelbrot fractal in x86 Assembly",
 			"gif-path": "/project-pic/asm.gif",
 			"description": "An optional university project.",
@@ -41,7 +28,7 @@
 			"link-to-demo": null
 		},
 		{
-			"idx": 3,
+			"idx": 2,
 			"name": "Mor-C",
 			"gif-path": "https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21vcnNlLWNvZGUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0=",
 			"description": "A compilator for our own programming language, highly inspired by the morse code.",
@@ -54,7 +41,7 @@
 			"link-to-demo": null
 		},
 		{
-			"idx": 4,
+			"idx": 3,
 			"name": "2048-AI",
 			"gif-path": "/project-pic/2048.png",
 			"description": "An A.I. who plays 2048.",
@@ -63,6 +50,18 @@
 				"Python"
 			],
 			"link-to-code": "https://github.com/buduboti/2048-monte-carlo-AI",
+			"link-to-demo": null
+		},
+		{
+			"idx": 4,
+			"name": "Toolset for hacking",
+			"gif-path": "/project-pic/hacking.png",
+			"description": "I'd like to develop a toolkit for hacking and since I began to solve tryhackme rooms, I've developed this.",
+			"used-technologies": [
+				"A lot of tools, mostly listed in the repo",
+				"My patience"
+			],
+			"link-to-code": "https://github.com/buduboti/hacks",
 			"link-to-demo": null
 		}
 	]
