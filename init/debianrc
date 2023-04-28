@@ -2,7 +2,7 @@
 
 apt update
 
-apt install -y vim xorg dwm xcape sudo
+apt install -y vim xorg dwm xcape sudo zsh tmux git
 
 cat <<EOF > /etc/X11/xinit/xinitrc
 #!/bin/sh
@@ -18,3 +18,8 @@ cat <<EOF > /etc/X11/xinit/xinitrc
 . /etc/X11/Xsession
 EOF
 
+cd $HOME
+
+git clone https://github.com/buduboti/dotfiles .dotfiles
+
+.dotfiles/install
