@@ -2,7 +2,7 @@
 
 apt update
 
-apt install -y vim xorg xcape sudo
+apt install -y vim xorg dwm xcape sudo
 
 cat <<EOF > /etc/X11/xinit/xinitrc
 #!/bin/sh
