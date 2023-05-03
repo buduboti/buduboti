@@ -2,7 +2,7 @@
 
 apt update
 
-apt install -y vim xorg dwm xcape sudo zsh tmux git
+apt install -y vim xorg dwm xcape sudo zsh tmux git firefox-esr
 
 cat <<EOF > /etc/X11/xinit/xinitrc
 #!/bin/sh
