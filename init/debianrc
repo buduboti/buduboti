@@ -18,6 +18,11 @@ cat <<EOF > /etc/X11/xinit/xinitrc
 . /etc/X11/Xsession
 EOF
 
+adduser --disabled-password --gecos "" buduboti
+adduser buduboti sudo
+
+su buduboti
+
 cd $HOME
 
 git clone https://github.com/buduboti/dotfiles .dotfiles
