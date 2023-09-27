@@ -1,8 +1,16 @@
 #!/bin/sh
 
-apt update
+apt update && apt upgrade
 
 apt install -y vim xorg dwm xcape sudo zsh tmux git firefox-esr
+
+while : ; do
+        read -p "Do you want to install the CyperSecurity tools too? (nmap, gobuster, etc.) [Y/n]: " answer
+        [ "$answer" = "" -o "$answer" = "y" -o "$answer" = "Y" -o "$answer" = "n" -o "$answer" = "N" ] && break
+        echo "'$answer' is non acceptable!"
+done
+
+[ "$answer" = "" -o "$answer" = "y" -o "$answer" = "Y" ] && apt install -y nmap gobuster 
 
 cat <<EOF > /etc/X11/xinit/xinitrc
 #!/bin/sh
