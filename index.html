@@ -21,7 +21,6 @@
       if (window.scrollY !== 0) {
         let target = document.getElementById("scroll-div");
         fadeOutEffect(target);
-        target.removeEventListener("click", clickScrollIcon);
         target.classList.remove("link");
       }
     }
@@ -252,9 +251,9 @@
           </div>
         </div>
       </div>
-      <div id="scroll-div" class="link">
+	  <a href="#portfolio"><div id="scroll-div" class="link">
         <img src="/downArrow.png" />
-      </div>
+		  </div></a>
     </div>
     <!-- scripts -->
     <script src="js/particles.js"></script>

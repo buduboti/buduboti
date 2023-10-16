@@ -76,9 +76,9 @@ document
     }
   });
 
-document
-  .getElementById("scroll-div")
-  .addEventListener("click", clickScrollIcon);
+// document
+//   .getElementById("scroll-div")
+//   .addEventListener("click", clickScrollIcon);
 
 document.getElementById("hamburger").addEventListener("click", () => {
   label_arr.map((x) => (x.style.visibility = "visible"));
