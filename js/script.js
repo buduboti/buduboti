@@ -16,10 +16,6 @@ document.getElementById("nav-point-top").addEventListener("mouseleave", () => {
   }
 });
 
-// document.getElementById("nav-point-top").addEventListener("click", () => {
-//   window.location.hash = "title";
-// });
-
 document
   .getElementById("nav-point-portfolio")
   .addEventListener("mouseenter", () => {
@@ -36,10 +32,6 @@ document
     }
   });
 
-// document.getElementById("nav-point-portfolio").addEventListener("click", () => {
-//   window.location.hash = "portfolio";
-// });
-
 document.getElementById("nav-point-edu").addEventListener("mouseenter", () => {
   if (!portrait.matches) {
     labels[2].style.visibility = "visible";
@@ -51,10 +43,6 @@ document.getElementById("nav-point-edu").addEventListener("mouseleave", () => {
     labels[2].style.visibility = "hidden";
   }
 });
-
-// document.getElementById("nav-point-edu").addEventListener("click", () => {
-//   window.location.hash = "edu";
-// });
 
 document
   .getElementById("nav-point-hobby")
@@ -72,10 +60,6 @@ document
     }
   });
 
-// document.getElementById("nav-point-hobby").addEventListener("click", () => {
-//   window.location.hash = "hobby";
-// });
-
 document
   .getElementById("nav-point-contact")
   .addEventListener("mouseenter", () => {
@@ -91,14 +75,6 @@ document
       labels[4].style.visibility = "hidden";
     }
   });
-
-// document.getElementById("nav-point-contact").addEventListener("click", () => {
-//   window.location.hash = "contact";
-// });
-
-function clickScrollIcon() {
-  window.location.hash = "portfolio";
-}
 
 document
   .getElementById("scroll-div")
