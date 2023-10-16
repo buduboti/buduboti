@@ -181,10 +181,6 @@ div {
   box-sizing: border-box;
 }
 
-.link {
-  cursor: pointer;
-}
-
 .page-content {
   width: 100%;
   display: flex;
@@ -302,7 +298,7 @@ div {
   align-items: flex-start;
 }
 
-#social-media-div > img {
+#social-media-div > a > img {
   height: 50px;
   width: 50px;
   margin-left: 10px;
