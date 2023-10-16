@@ -15,8 +15,8 @@
           clearInterval(fadeEffectOut);
         }
       }, 200);
-		fadeEffectOut.then(() => {
-		document.getElementById("scroll-down-link").style.visibility = "hidden";
+		new Promise(resolve => setTimeout(resolve, 300)).then(() => {
+			document.getElementById("scroll-down-link").style.visibility = "hidden";
 		});
     }
 
