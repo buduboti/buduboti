@@ -124,26 +124,3 @@ document.addEventListener("click", (e) => {
   }
 });
 
-document.getElementById("ubb-link").addEventListener("click", () => {
-  window.open("http://www.cs.ubbcluj.ro/en/", "_blank");
-});
-
-document.getElementById("bolyai-link").addEventListener("click", () => {
-  window.open("https://bolyai.ro/index.php", "_blank");
-});
-
-document.getElementById("github-link").addEventListener("click", () => {
-  window.open("https://github.com/buduboti/", "_blank");
-});
-
-document.getElementById("linkedin-link").addEventListener("click", () => {
-  window.open(
-    "https://www.linkedin.com/in/botond-barna-balás-11824baa/",
-    "_blank"
-  );
-});
-
-document.getElementById("stackoverflow-link").addEventListener("click", () => {
-  window.open("https://stackoverflow.com/users/story/5724857", "_blank");
-});
-
