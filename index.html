@@ -15,13 +15,15 @@
           clearInterval(fadeEffectOut);
         }
       }, 200);
+		new Promise(resolve => setTimeout(resolve, 300)).then(() => {
+			document.getElementById("scroll-down-link").style.visibility = "hidden";
+		});
     }
 
     function scrollFadeOut(e) {
       if (window.scrollY !== 0) {
         let target = document.getElementById("scroll-div");
         fadeOutEffect(target);
-        target.removeEventListener("click", clickScrollIcon);
         target.classList.remove("link");
       }
     }
@@ -33,7 +35,7 @@
       }, 1000);
     });
   </script>
-    <title>Balás Botond Barna</title>
+    <title>buduboti</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" media="screen" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,7 +51,7 @@
             <p>I'm a SysAdmin,<br />who wants to be a Cyber Security professionalist.</p>
           </div>
           <div id="skills">
-            <script src="https://tryhackme.com/badge/188453"></script>
+			  <a href="https://tryhackme.com/p/buduboti"><script src="https://tryhackme.com/badge/188453"></script></a>
           </div>
         </div>
         <div id="portfolio">
@@ -77,12 +79,11 @@
                     </div>
                   </div>
                   <div class="project-links">
-                      <div class="project-link-code link" id="project-link-code-0">
-                          <p>Code</p>
-                      </div>
-                      <div class="project-link-demo non-working-link">
-                        <p>Demo</p>
-                      </div>
+					  <a href="https://github.com/buduboti/dotfiles">
+						  <div class="project-link-code link" id="project-link-code-0">
+							  <p>Code</p>
+						  </div>
+					  </a>
                   </div>
                 </div>
               </div>
@@ -107,97 +108,26 @@
                     </div>
                   </div>
                   <div class="project-links">
-                      <div class="project-link-code link" id="project-link-code-1">
-                          <p>Code</p>
-                      </div>
-                      <div class="project-link-demo non-working-link">
-                        <p>Demo</p>
-                      </div>
+					  <a href="https://github.com/buduboti/mandelbrot-assembly">
+						  <div class="project-link-code link">
+							  <p>Code</p>
+						  </div>
+					  </a>
                   </div>
                 </div>
               </div>
               <div class="project">
                 <div class="project-show">
-                  <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL21vcnNlLWNvZGUuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0&#x3D;">
+                  <img src="https://pwnagotchi.ai/pwnagotchi.gif?v=2">
                 </div>
                 <div class="project-right-side">
                   <div class="project-info">
                     <div class="project-title">
-                      <h2>Mor-C</h2>
+                      <h2>Pwnagotchi</h2>
                     </div>
                     <div class="project-desc">
-                      <p>A compilator for our own programming language, highly inspired by the morse code.</p>
-                      <p>I've used in this project:</p>
-                        <ul>
-                            <li>Bison</li>
-                            <li>Flex</li>
-                            <li>C</li>
-                        </ul>
+                      <p>I've made a pwnagotchi, although the sodering isn't my best work I've captured a few connections.</p>
                     </div>
-                  </div>
-                  <div class="project-links">
-                      <div class="project-link-code link" id="project-link-code-2">
-                          <p>Code</p>
-                      </div>
-                      <div class="project-link-demo non-working-link">
-                        <p>Demo</p>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="project">
-                <div class="project-show">
-                  <img src="/project-pic/2048.png">
-                </div>
-                <div class="project-right-side">
-                  <div class="project-info">
-                    <div class="project-title">
-                      <h2>2048-AI</h2>
-                    </div>
-                    <div class="project-desc">
-                      <p>An A.I. who plays 2048.</p>
-                      <p>I've used in this project:</p>
-                        <ul>
-                            <li>Monte Carlo tree search (MCTS)</li>
-                            <li>Python</li>
-                        </ul>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                      <div class="project-link-code link" id="project-link-code-3">
-                          <p>Code</p>
-                      </div>
-                      <div class="project-link-demo non-working-link">
-                        <p>Demo</p>
-                      </div>
-                  </div>
-                </div>
-              </div>
-              <div class="project">
-                <div class="project-show">
-                  <img src="/project-pic/hacking.png">
-                </div>
-                <div class="project-right-side">
-                  <div class="project-info">
-                    <div class="project-title">
-                      <h2>Toolset for hacking</h2>
-                    </div>
-                    <div class="project-desc">
-                      <p>I&#x27;d like to develop a toolkit for hacking and since I began to solve tryhackme rooms, I&#x27;ve developed this.</p>
-                      <p>I've used in this project:</p>
-                        <ul>
-                            <li>A lot of tools, mostly listed in the repo</li>
-                            <li>My patience</li>
-                        </ul>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                      <div class="project-link-code link" id="project-link-code-4">
-                          <p>Code</p>
-                      </div>
-                      <div class="project-link-demo non-working-link">
-                        <p>Demo</p>
-                      </div>
                   </div>
                 </div>
               </div>
@@ -222,7 +152,7 @@
               <div class="edu-info">
                 <div class="edu-info-header">
                   <h1>Babeș-Bolyai University <br class="at1200px" />@ Cluj Napoca</h1>
-                  <p id="ubb-link" class="link">[link]</p>
+				  <a href="http://www.cs.ubbcluj.ro/en/"><p class="link">[link]</p></a>
                 </div>
                 <p><b>Faculty of Mathematics and Computer Science</b><br />Computer Science</p>
               </div>
@@ -237,7 +167,7 @@
               <div class="edu-info">
                 <div class="edu-info-header">
                   <h1>Bolyai Farkas Theoretical <br class="at1200px" />High School <br class="at1366px" />@ Tg Mures</h1>
-                  <p id="bolyai-link" class="link">[link]</p>
+                  <a href="https://bolyai.ro/index.php"><p class="link">[link]</p></a>
                 </div>
                 <p><b>Mathematics-Informatics</b><br />intensive Informatics</p>
               </div>
@@ -250,7 +180,7 @@
           </div>
           <div class="page-content" id="hobby-page">
             <div id="hobby-column-0" class="hobby-column">
-            <div class="hobby-div" id="hobby-idx-4"><img src="/project-pic/Yuppi.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title" style="display: flex; flex-direction: row;"><h2>Yuppi</h2><p class="link">[link]</p></div><div class="hobby-desc"><p>I'm a volunteer at Yuppi camp.</p></div></div></div><div class="hobby-div" id="hobby-idx-8"><img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_673965992_20001333183785248481_392637.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Reading</h2></div><div class="hobby-desc"><p>Unfortunately I didn't read a lot. But after I've read the "Az Irodalom Visszavág", it brought my mood to read more.</p></div></div></div></div>
+				<div class="hobby-div" id="hobby-idx-4"><img src="/project-pic/Yuppi.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title" style="display: flex; flex-direction: row;"><h2>Yuppi</h2><a href="https://www.yuppicamp.ro/"><p>[link]</p></a></div><div class="hobby-desc"><p>I'm a volunteer at Yuppi camp.</p></div></div></div><div class="hobby-div" id="hobby-idx-8"><img src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_673965992_20001333183785248481_392637.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Reading</h2></div><div class="hobby-desc"><p>Unfortunately I didn't read a lot. But after I've read the "Az Irodalom Visszavág", it brought my mood to read more.</p></div></div></div></div>
             <div id="hobby-column-1" class="hobby-column">
             <div class="hobby-div" id="hobby-idx-1"><img src="/project-pic/Music.png" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Music</h2></div><div class="hobby-desc"><p>I'm not just listening music at all time, but I'm playing several instruments. (Some of them better, some of them not that much.)</p></div></div></div><div class="hobby-div" id="hobby-idx-5"><img src="https://cdn.lifehack.org/wp-content/uploads/2013/09/jwj-slackline-0041.jpg" class="hobby-pic"><div class="hobby-info"><div class="hobby-title"><h2>Slackline</h2></div><div class="hobby-desc"><p>I'm not confident enough in the slackline yet, but work in progress and I'd like to try out highline too. (That's the main motivation.. : )</p></div></div></div></div>
             <div id="hobby-column-2" class="hobby-column">
@@ -266,11 +196,11 @@
           <div class="page-content" id="contact-page">
             <div id="contact-left">
               <div id="my-info">
-                <h1 id="my-email">buduboti@buduboti.xyz</h1>
+				  <a href="mailto:buduboti@buduboti"><h1 id="my-email">buduboti@buduboti.xyz</h1></a>
                 <div id="social-media-div">
-                  <img src="/icons/github.png" id="github-link" class="link" />
-                  <img src="/icons/linkedin.png" id="linkedin-link" class="link" />
-                  <img src="/icons/stackoverflow.png" id="stackoverflow-link" class="link" />
+                  <a href="https://github.com/buduboti/"><img src="/icons/github.png" class="link social-media-img" />
+                  <a href="https://www.linkedin.com/in/botond-barna-balás-11824baa/"><img src="/icons/linkedin.png" class="link social-media-img" />
+				  <a href="https://stackoverflow.com/users/story/5724857"><img src="/icons/stackoverflow.png" class="link social-media-img" /></a>
                 </div>
               </div>
               <div id="response-field">
@@ -290,21 +220,21 @@
       </div>
       <div id="nav">
         <div id="nav-points">
-          <div id="nav-point-top" class="link">
+			<a href="#title"><div id="nav-point-top">
             <img src="/icons/point.png" />
-          </div>
-          <div id="nav-point-portfolio" class="link">
+				</div></a>
+		  <a href="#portfolio"><div id="nav-point-portfolio">
             <img src="/icons/point.png" />
-          </div>
-          <div id="nav-point-edu" class="link">
+			  </div></a>
+		  <a href="#edu"><div id="nav-point-edu">
             <img src="/icons/point.png" />
-          </div>
-          <div id="nav-point-hobby" class="link">
+			  </div></a>
+		  <a href="#hobby"><div id="nav-point-hobby">
             <img src="/icons/point.png" />
-          </div>
-          <div id="nav-point-contact" class="link">
+			  </div></a>
+		  <a href="#contact"><div id="nav-point-contact">
             <img src="/icons/point.png" />
-          </div>
+			  </div></a>
         </div>
         <div id="nav-labels">
           <div id="nav-label-top-div" class="blur-box" style="visibility: hidden">
@@ -324,9 +254,9 @@
           </div>
         </div>
       </div>
-      <div id="scroll-div" class="link">
+	  <a href="#portfolio" id="scroll-down-link"><div id="scroll-div" class="link">
         <img src="/downArrow.png" />
-      </div>
+		  </div></a>
     </div>
     <!-- scripts -->
     <script src="js/particles.js"></script>
