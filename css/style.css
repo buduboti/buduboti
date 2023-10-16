@@ -298,7 +298,7 @@ div {
   align-items: flex-start;
 }
 
-.social-media-img {
+.link.social-media-img {
   height: 50px;
   width: 50px;
   margin-left: 10px;
