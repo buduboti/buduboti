@@ -10,6 +10,7 @@
 
 a:active, a:hover, a:visited, a:link, a:active > p , a:hover > p , a:visited > p , a:link > p {
   text-decoration: none;
+  color: rgba(238, 238, 238, 0.8);
 }
 
 html, body { 
