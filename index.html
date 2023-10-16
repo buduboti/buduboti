@@ -15,7 +15,9 @@
           clearInterval(fadeEffectOut);
         }
       }, 200);
+		fadeEffectOut.then(() => {
 		document.getElementById("scroll-down-link").style.visibility = "hidden";
+		});
     }
 
     function scrollFadeOut(e) {
