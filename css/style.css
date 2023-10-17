@@ -833,6 +833,8 @@ input:focus {
     flex-direction: column;
   }
   #contact-left {
+    margin-right: 0%;
+    margin-left: 0%;
     width: 100%;
   }
   #my-email {
@@ -928,9 +930,5 @@ input:focus {
   }
   #nav {
     display: none;
-  }
-  #contact-left {
-    margin-right: 0%;
-    margin-left: 0%;
   }
 }
