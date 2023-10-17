@@ -929,4 +929,8 @@ input:focus {
   #nav {
     display: none;
   }
+  #contact-left {
+    margin-right: 0%;
+    margin-left: 0%;
+  }
 }
