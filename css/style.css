@@ -485,6 +485,7 @@ input:focus {
   height: 50px;
   width: 100px;
   border-radius: 25px;
+  margin-left: 50px;
   background-color: #707070;
   align-items: center;
   display: flex;
