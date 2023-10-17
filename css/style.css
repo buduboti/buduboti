@@ -839,7 +839,7 @@ input:focus {
     font-size: 20px;
   }
   #skills, #name-and-info {
-    width: 100%;
+    width: 90%;
   }
   #title {
     padding-top: 10%;
